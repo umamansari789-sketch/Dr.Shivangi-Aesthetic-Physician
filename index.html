@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dr. Shivangi | Aesthetic Physician & Cosmetologist – New Delhi</title>
+  <meta name="description"
+    content="Advanced skin, hair & aesthetic treatments by Dr. Shivangi – Award-winning Aesthetic Physician & Cosmetologist in New Delhi. Book your consultation today." />
+  <meta name="keywords"
+    content="aesthetic physician delhi, cosmetologist delhi, botox delhi, hydrafacial delhi, PRP hair therapy, skin treatment delhi, dr shivangi" />
+  <meta property="og:title" content="Dr. Shivangi | Aesthetic Physician & Cosmetologist" />
+  <meta property="og:description"
+    content="Luxury aesthetic clinic in New Delhi. Advanced skin, hair & aesthetic treatments." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+    <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+/>
+
+  <link rel="stylesheet" href="assets/style.css">
+  
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+  <!-- ─────────────────────────────────
+     NAVBAR
+───────────────────────────────── -->
+  <nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo" onclick="showPage('home')">
+     <img src="assets/images/qala-logo (1).png" width="320" alt="">
+    </div>
+
+    <div class="nav-menu">
+      <div class="nav-item"><span class="nav-link" onclick="showPage('home')">Home</span></div>
+      <div class="nav-item"><span class="nav-link" onclick="showPage('about')">About</span></div>
+
+      <div class="nav-item">
+        <span class="nav-link">Treatments <span class="nav-arrow"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" fill="#fff" viewBox="0 0 640 640"><path d="M297.4 438.6C309.9 451.1 330.2 451.1 342.7 438.6L502.7 278.6C515.2 266.1 515.2 245.8 502.7 233.3C490.2 220.8 469.9 220.8 457.4 233.3L320 370.7L182.6 233.4C170.1 220.9 149.8 220.9 137.3 233.4C124.8 245.9 124.8 266.2 137.3 278.7L297.3 438.7z"/></svg></span></span>
+        <div class="dropdown mega">
+          <div class="mega-col">
+            <div class="mega-col-hd">Skin Treatments</div>
+            <div class="drop-link" onclick="showTreatment('hydrafacial')">HydraFacial</div>
+            <div class="drop-link" onclick="showTreatment('chemical-peel')">Chemical Peel</div>
+            <div class="drop-link" onclick="showTreatment('acne')">Acne Treatment</div>
+            <div class="drop-link" onclick="showTreatment('pigmentation')">Pigmentation</div>
+            <div class="drop-link" onclick="showTreatment('skin-brightening')">Skin Brightening</div>
+            <div class="drop-link" onclick="showTreatment('anti-aging')">Anti-Aging</div>
+          </div>
+          <div class="mega-col">
+            <div class="mega-col-hd">Hair Treatments</div>
+            <div class="drop-link" onclick="showTreatment('prp')">PRP Therapy</div>
+            <div class="drop-link" onclick="showTreatment('hair-regrowth')">Hair Regrowth</div>
+            <div class="drop-link" onclick="showTreatment('hair-fall')">Hair Fall Control</div>
+            <div class="drop-link" onclick="showTreatment('scalp-detox')">Scalp Detox</div>
+          </div>
+          <div class="mega-col">
+            <div class="mega-col-hd">Aesthetic Procedures</div>
+            <div class="drop-link" onclick="showTreatment('botox')">Botox</div>
+            <div class="drop-link" onclick="showTreatment('fillers')">Dermal Fillers</div>
+            <div class="drop-link" onclick="showTreatment('lip')">Lip Enhancement</div>
+            <div class="drop-link" onclick="showTreatment('laser')">Laser Treatments</div>
+            <div class="drop-link" onclick="showTreatment('skin-tightening')">Skin Tightening</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-item"><span class="nav-link" onclick="showPage('gallery')">Gallery</span></div>
+      <div class="nav-item"><span class="nav-link" onclick="showPage('blog')">Blog</span></div>
+      <div class="nav-item"><span class="nav-link" onclick="showPage('contact')">Contact</span></div>
+      <button class="nav-cta" onclick="openModal()">Book Consultation</button>
+    </div>
+
+    <div class="hamburger" id="ham" onclick="toggleMob()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <div class="mob-link" onclick="showPage('home');closeMob()">Home</div>
+  <div class="mob-link" onclick="showPage('about');closeMob()">About Dr. Shivangi</div>
+  <div class="mob-link" onclick="toggleMobSub('ms1')">Skin Treatments <span id="ms1-arrow">▾</span></div>
+  <div class="mob-sub-wrap" id="ms1">
+    <div class="mob-sub" onclick="showTreatment('hydrafacial');closeMob()">→ HydraFacial</div>
+    <div class="mob-sub" onclick="showTreatment('chemical-peel');closeMob()">→ Chemical Peel</div>
+    <div class="mob-sub" onclick="showTreatment('acne');closeMob()">→ Acne Treatment</div>
+    <div class="mob-sub" onclick="showTreatment('pigmentation');closeMob()">→ Pigmentation</div>
+    <div class="mob-sub" onclick="showTreatment('anti-aging');closeMob()">→ Anti-Aging</div>
+  </div>
+  <div class="mob-link" onclick="toggleMobSub('ms2')">Hair Treatments <span id="ms2-arrow">▾</span></div>
+  <div class="mob-sub-wrap" id="ms2">
+    <div class="mob-sub" onclick="showTreatment('prp');closeMob()">→ PRP Therapy</div>
+    <div class="mob-sub" onclick="showTreatment('hair-regrowth');closeMob()">→ Hair Regrowth</div>
+    <div class="mob-sub" onclick="showTreatment('hair-fall');closeMob()">→ Hair Fall Control</div>
+  </div>
+  <div class="mob-link" onclick="toggleMobSub('ms3')">Aesthetic Procedures <span id="ms3-arrow">▾</span></div>
+  <div class="mob-sub-wrap" id="ms3">
+    <div class="mob-sub" onclick="showTreatment('botox');closeMob()">→ Botox</div>
+    <div class="mob-sub" onclick="showTreatment('fillers');closeMob()">→ Dermal Fillers</div>
+    <div class="mob-sub" onclick="showTreatment('lip');closeMob()">→ Lip Enhancement</div>
+    <div class="mob-sub" onclick="showTreatment('laser');closeMob()">→ Laser Treatments</div>
+  </div>
+  <div class="mob-link" onclick="showPage('gallery');closeMob()">Gallery</div>
+  <div class="mob-link" onclick="showPage('blog');closeMob()">Blog</div>
+  <div class="mob-link" onclick="showPage('contact');closeMob()">Contact</div>
+  <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
+    <button class="btn-gold" style="width:100%;padding:14px" onclick="openModal();closeMob()">Book Consultation</button>
+    <a href="https://wa.me/917906402370" target="_blank" class="wa-btn" style="justify-content:center;width:100%"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> WhatsApp Us</a>
+  </div>
+  <div style="display:flex;gap:12px;margin-top:20px;justify-content:center">
+    <a href="https://www.instagram.com/qalaaesthetics_?igsh=MW53eHl2cmNmbGFlaw==" target="_blank" class="soc-btn"><i class="fa-brands fa-instagram" style="color: white;"></i></a>
+    <a href="https://www.facebook.com/share/1UCyryxdq5/" target="_blank" class="soc-btn"><i class="fa-brands fa-facebook-f" style="color: white;"></i></a>
+    <a href="https://x.com/QalaAesthetics" target="_blank" class="soc-btn"><i class="fa-brands fa-x-twitter" style="color: white;"></i></a>
+    <a href="https://www.linkedin.com/in/qala-aesthetics-ab73b7403?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="soc-btn"><i class="fa-brands fa-linkedin-in" style="color: white;"></i></a>
+  </div>
+</div>
+
+  <!-- ─────────────────────────────────
+     HOME PAGE
+───────────────────────────────── -->
+  <div class="page active" id="page-home">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-orb"
+        style="width:600px;height:600px;background:radial-gradient(circle,rgba(184,150,90,.07) 0%,transparent 70%);right:-150px;top:50%;transform:translateY(-50%)">
+      </div>
+      <div class="hero-orb"
+        style="width:300px;height:300px;background:radial-gradient(circle,rgba(184,150,90,.05) 0%,transparent 70%);left:80px;bottom:100px">
+      </div>
+      <div class="hero-grid"></div>
+      <div class="hero-particles" id="particles"></div>
+
+      <div class="hero-content">
+        <div>
+          <!-- <div class="hero-pretag">Award-Winning Aesthetic Medicine</div> -->
+          <h1 class="hero-h1">Your Skin<br>Deserves <br> <em>Expert Care.</em></h1>
+          <p class="hero-sub">Advanced treatments for glowing skin, healthy hair, and natural beauty enhancement.</p>
+          <div class="hero-btns">
+            <button class="btn-gold" onclick="openModal()">Book Appointment</button>
+            <a href="tel:+917906402370">
+            <button class="btn-outline-light" onclick="scrollToTreatments()"> Call Now </button></a>
+          </div>
+          <div class="hero-stats">
+            <div class="hstat">
+              <div class="num">5+</div>
+              <div class="lbl">Years Expertise</div>
+            </div>
+            <div class="hstat">
+              <div class="num">2,800+</div>
+              <div class="lbl">Happy Clients</div>
+            </div>
+            <div class="hstat">
+              <div class="num">15+</div>
+              <div class="lbl">Treatments</div>
+            </div>
+            <div class="hstat">
+              <div class="num">100%</div>
+              <div class="lbl">Natural Results</div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-right" id="heroCard">
+          <div class="hero-card">
+            <div class="hcard-head">
+              <div class="hcard-head-dot"></div>
+              <p style="font-size: 15px; font-weight: 600;">Book Your Appointment</p>
+            </div>
+            <div class="hcard-body">
+              <input class="hf" id="hf-name" placeholder="Your Full Name *" />
+              <input class="hf" id="hf-phone" placeholder="Phone / WhatsApp *" />
+              <input class="hf" id="hf-email" placeholder="Email Address" />
+              <select class="hf" id="hf-service">
+                <option value="">Select Treatment *</option>
+                <option>HydraFacial</option>
+                <option>Chemical Peel</option>
+                <option>Acne Treatment</option>
+                <option>Pigmentation</option>
+                <option>Botox & Fillers</option>
+                <option>PRP Hair Therapy</option>
+                <option>Laser Treatment</option>
+                <option>Anti-Aging</option>
+              </select>
+              <input class="hf" type="date" id="hf-date" />
+              <button class="btn-gold" style="width:100%;padding:13px" onclick="submitHeroForm()">Submit Now
+                →</button>
+              <a href="https://wa.me/917906402370"
+                target="_blank" class="hcard-wa"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> Chat on
+                WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="scroll-hint">
+        <div class="scroll-line"></div>SCROLL
+      </div> -->
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-wrap">
+      <div class="marquee-track">
+        <span class="mi"><span class="mi-dot"></span>HydraFacial</span><span class="mi"><span
+            class="mi-dot"></span>Botox & Fillers</span><span class="mi"><span class="mi-dot"></span>PRP Hair
+          Therapy</span><span class="mi"><span class="mi-dot"></span>Chemical Peels</span><span class="mi"><span
+            class="mi-dot"></span>Laser Rejuvenation</span><span class="mi"><span class="mi-dot"></span>Skin
+          Tightening</span><span class="mi"><span class="mi-dot"></span>Lip Enhancement</span><span class="mi"><span
+            class="mi-dot"></span>Anti-Aging</span><span class="mi"><span class="mi-dot"></span>Acne
+          Treatment</span><span class="mi"><span class="mi-dot"></span>Pigmentation</span>
+        <span class="mi"><span class="mi-dot"></span>HydraFacial</span><span class="mi"><span
+            class="mi-dot"></span>Botox & Fillers</span><span class="mi"><span class="mi-dot"></span>PRP Hair
+          Therapy</span><span class="mi"><span class="mi-dot"></span>Chemical Peels</span><span class="mi"><span
+            class="mi-dot"></span>Laser Rejuvenation</span><span class="mi"><span class="mi-dot"></span>Skin
+          Tightening</span><span class="mi"><span class="mi-dot"></span>Lip Enhancement</span><span class="mi"><span
+            class="mi-dot"></span>Anti-Aging</span><span class="mi"><span class="mi-dot"></span>Acne
+          Treatment</span><span class="mi"><span class="mi-dot"></span>Pigmentation</span>
+      </div>
+    </div>
+
+    <!-- ABOUT PREVIEW — IVORY BG -->
+    <section class="section reveal" style="background:var(--ivory)">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-img-wrap reveal-left">
+            <div class="about-img-box">
+              <div class="corner tl"></div>
+              <div class="corner br"></div>
+              <!-- Replace src with Dr. Shivangi's actual photo -->
+              <div class="about-img-placeholder">
+                <div class="about-img-letter"><img src="assets/images/dr.shivangi.png" alt=""></div>
+              </div>
+            </div>
+            <div class="side-badge">Dr. Shivangi · Aesthetic Physician</div>
+          </div>
+          <div class="reveal-right">
+            <div class="tag">Meet Your Physician</div>
+            <h2 class="section-title">Dr. Shivangi —<br>Where Art Meets<br><em>Medical Precision.</em></h2>
+            <p class="subtitle">With over five years of dedicated practice in advanced aesthetic medicine, Dr. Shivangi
+              combines clinical science with an artist's eye — delivering transformations that feel effortlessly
+              natural.</p>
+            <p class="subtitle" style="margin-top:10px">Known for her refined approach and meticulous attention to
+              detail, she creates results that enhance natural beauty while preserving each patient's individuality.</p>
+            <div class="about-badges">
+              <span class="abadge">MBBS</span><span class="abadge">Cosmetologist</span><span class="abadge">Laser
+                Certified</span><span class="abadge">Anti-Aging Specialist</span>
+            </div>
+            <div class="about-creds">
+              <div>
+                <div class="ac-num">5+</div>
+                <div class="ac-lbl">Years Exp.</div>
+              </div>
+              <div>
+                <div class="ac-num">2,800+</div>
+                <div class="ac-lbl">Patients</div>
+              </div>
+              <div>
+                <div class="ac-num">15+</div>
+                <div class="ac-lbl">Procedures</div>
+              </div>
+            </div>
+            <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap">
+              <button class="btn-gold" onclick="showPage('about')">Know More →</button>
+              <button class="btn-outline-dark" onclick="openModal()">Book Consultation</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TREATMENTS — DARK BG -->
+    <section class="section" style="background:var(--dark)" id="treatments-anchor">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="tag" style="justify-content:center;color:var(--gold)"><span
+              style="width:32px;height:1px;background:var(--gold);display:inline-block"></span>Signature Services</div>
+          <h2 class="section-title" style="color:#fff">Precision Treatments,<br><em>Luminous Results.</em></h2>
+          <p class="subtitle" style="color:rgba(255, 255, 255, 0.815);max-width:480px;margin:0 auto">From advanced skin
+            rejuvenation to transformative hair restoration — every treatment is personalised to you.</p>
+        </div>
+        <div class="treat-grid">
+          <div class="treat-card reveal delay-1" onclick="showTreatment('hydrafacial')">
+            <div class="tc-num">01</div><span class="tc-icon"></span>
+            <div class="tc-name serif">Skin Rejuvenation</div>
+            <div class="tc-desc">HydraFacial, chemical peels & advanced glow therapies for radiant skin.</div>
+            <div class="tc-link">Explore Treatment →</div>
+          </div>
+          <div class="treat-card reveal delay-2" onclick="showTreatment('anti-aging')">
+            <div class="tc-num">02</div><span class="tc-icon"></span>
+            <div class="tc-name serif">Anti-Aging</div>
+            <div class="tc-desc">Botox, fillers & skin tightening for timeless, youthful beauty.</div>
+            <div class="tc-link">Explore Treatment →</div>
+          </div>
+          <div class="treat-card reveal delay-3" onclick="showTreatment('prp')">
+            <div class="tc-num">03</div><span class="tc-icon"></span>
+            <div class="tc-name serif">Hair Restoration</div>
+            <div class="tc-desc">PRP therapy & advanced hair regrowth protocols with proven results.</div>
+            <div class="tc-link">Explore Treatment →</div>
+          </div>
+          <div class="treat-card reveal delay-4" onclick="showTreatment('laser')">
+            <div class="tc-num">04</div><span class="tc-icon"></span>
+            <div class="tc-name serif">Laser Treatments</div>
+            <div class="tc-desc">Precision laser for texture, tone, pigmentation & scar reduction.</div>
+            <div class="tc-link">Explore Treatment →</div>
+          </div>
+          <div class="treat-card reveal delay-5" onclick="showTreatment('botox')">
+            <div class="tc-num">05</div><span class="tc-icon"></span>
+            <div class="tc-name serif">Botox & Fillers</div>
+            <div class="tc-desc">Sculpt, lift & restore volume with expert artistry and precision.</div>
+            <div class="tc-link">Explore Treatment →</div>
+          </div>
+          <div class="treat-card reveal delay-1" onclick="showTreatment('acne')">
+            <div class="tc-num">06</div><span class="tc-icon"></span>
+            <div class="tc-name serif">Acne & Pigmentation</div>
+            <div class="tc-desc">Targeted medical protocols for clear, even-toned, glowing skin.</div>
+            <div class="tc-link">Explore Treatment →</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY CHOOSE — WHITE BG -->
+    <section class="section" style="background:#fff">
+      <div class="container">
+        <div class="why-section-wrap">
+          <div class="reveal-left">
+            <div class="tag">The Difference</div>
+            <h2 class="section-title">Why Discerning Clients<br>Choose <em>Dr. Shivangi.</em></h2>
+            <p class="subtitle">At every touchpoint — from consultation to aftercare — the experience is curated for
+              those who value precision, discretion, and genuine results.</p>
+            <div style="margin-top:28px"><button class="btn-gold" onclick="openModal()">Book Consultation</button></div>
+          </div>
+          <div class="why-grid reveal-right">
+            <div class="why-card">
+              <div class="why-icon-wrap">
+                <div class="why-icon">🔬</div>
+              </div>
+              <div class="why-title serif">Advanced Technology</div>
+              <div class="why-text">Medical-grade, USFDA-approved devices delivering superior outcomes for all skin
+                types.</div>
+            </div>
+            <div class="why-card">
+              <div class="why-icon-wrap">
+                <div class="why-icon">🤲</div>
+              </div>
+              <div class="why-title serif">Bespoke Care</div>
+              <div class="why-text">Every treatment plan uniquely crafted for your specific skin story and aesthetic
+                goals.</div>
+            </div>
+            <div class="why-card">
+              <div class="why-icon-wrap">
+                <div class="why-icon">🌿</div>
+              </div>
+              <div class="why-title serif">Natural Results</div>
+              <div class="why-text">Enhancement that celebrates — never overcomes — your inherent, individual features.
+              </div>
+            </div>
+            <div class="why-card">
+              <div class="why-icon-wrap">
+                <div class="why-icon">🏆</div>
+              </div>
+              <div class="why-title serif">Expert Consultation</div>
+              <div class="why-text">In-depth analysis, honest advice, and fully transparent treatment planning.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+
+    <!-- BEFORE / AFTER AUTO SLIDER -->
+<section class="section" style="background:var(--dark2)">
+  <div class="container">
+
+    <div class="text-center reveal">
+      <div class="tag" style="justify-content:center;color:var(--gold)">
+        <span style="width:32px;height:1px;background:var(--gold);display:inline-block"></span>
+        Real Results
+      </div>
+
+      <h2 class="section-title" style="color:#fff">
+        Transformations That<br>
+        <em>Speak for Themselves.</em>
+      </h2>
+    </div>
+
+   <!-- =========================
+     SINGLE IMAGE AUTO SLIDER
+========================= -->
+
+<!-- =========================
+     BOOTSTRAP CAROUSEL
+========================= -->
+
+<div id="beautyCarousel" class="carousel slide beauty-carousel" data-bs-ride="carousel">
+
+  <!-- INDICATORS -->
+  <div class="carousel-indicators">
+
+    <button type="button" data-bs-target="#beautyCarousel" data-bs-slide-to="0" class="active"></button>
+
+    <button type="button" data-bs-target="#beautyCarousel" data-bs-slide-to="1"></button>
+
+    <button type="button" data-bs-target="#beautyCarousel" data-bs-slide-to="2"></button>
+
+    <button type="button" data-bs-target="#beautyCarousel" data-bs-slide-to="3"></button>
+
+    <button type="button" data-bs-target="#beautyCarousel" data-bs-slide-to="4"></button>
+
+    <button type="button" data-bs-target="#beautyCarousel" data-bs-slide-to="5"></button>
+
+    <button type="button" data-bs-target="#beautyCarousel" data-bs-slide-to="6"></button>
+
+  </div>
+
+  <!-- SLIDES -->
+  <div class="carousel-inner">
+
+    <!-- SLIDE 1 -->
+    <div class="carousel-item active">
+    
+      <div class="result-image-pair">
+                <div class="gallery-item">
+                  <img src="assets/images/botox-1.jpeg" alt="Botox result 1" class="img-fluid">
+                </div>
+                <div class="gallery-item">
+                  <img src="assets/images/botox-2.jpeg" alt="Botox result 2" class="img-fluid">
+                </div>
+              </div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="carousel-item">
+      <div class="result-image-pair">
+                <div class="gallery-item">
+                  <img src="assets/images/botox-3.jpeg" alt="Botox result 1" class="img-fluid">
+                </div>
+                <div class="gallery-item">
+                  <img src="assets/images/botox-4.jpeg" alt="Botox result 2" class="img-fluid">
+                </div>
+              </div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="carousel-item">
+      <div class="result-image-pair">
+                <div class="gallery-item">
+                  <img src="assets/images/botox-5.jpeg" alt="Botox result 1" class="img-fluid">
+                </div>
+                <div class="gallery-item">
+                  <img src="assets/images/botox-6.jpeg" alt="Botox result 2" class="img-fluid">
+                </div>
+              </div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="carousel-item">
+    <div class="result-image-pair">
+                <div class="gallery-item">
+                  <img src="assets/images/botox-7.jpeg" alt="Botox result 1" class="img-fluid">
+                </div>
+                <div class="gallery-item">
+                  <img src="assets/images/botox.png" alt="Botox result 2" class="img-fluid">
+                </div>
+              </div>
+    </div>
+ 
+  </div>
+
+  <!-- PREV BUTTON -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#beautyCarousel" data-bs-slide="prev">
+
+    <span class="carousel-control-prev-icon"></span>
+
+  </button>
+
+  <!-- NEXT BUTTON -->
+  <button class="carousel-control-next" type="button" data-bs-target="#beautyCarousel" data-bs-slide="next">
+
+    <span class="carousel-control-next-icon"></span>
+
+  </button>
+
+</div>
+
+  </div>
+</section>
+
+    <!-- TESTIMONIALS — IVORY BG -->
+    <section class="section" style="background:var(--ivory)">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="tag" style="justify-content:center"><span
+              style="width:32px;height:1px;background:var(--gold);display:inline-block"></span>Client Stories</div>
+          <h2 class="section-title">Voices of<br><em>Transformation.</em></h2>
+        </div>
+        <div class="testi-grid">
+          <div class="testi-card reveal delay-1">
+            <div class="testi-qmark">"</div>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-text">"Dr. Shivangi's approach is unlike anything I've experienced. My skin looks
+              naturally luminous — not treated. People keep asking what I'm doing differently."</div>
+            <div class="testi-author">
+              <div class="testi-av">P</div>
+              <div>
+                <div class="testi-name">Priya Kapoor</div>
+                <div class="testi-treat">HydraFacial + Glow Peel</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card reveal delay-2">
+            <div class="testi-qmark">"</div>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-text">"Three PRP sessions and my hair loss has completely reversed. The results exceeded
+              every expectation. The clinic environment itself is calming and luxurious."</div>
+            <div class="testi-author">
+              <div class="testi-av">A</div>
+              <div>
+                <div class="testi-name">Arjun Sharma</div>
+                <div class="testi-treat">PRP Hair Therapy</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card reveal delay-3">
+            <div class="testi-qmark">"</div>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-text">"The most natural filler result I've seen. People notice something is different —
+              they just can't place it. That is the art. Dr. Shivangi is truly gifted."</div>
+            <div class="testi-author">
+              <div class="testi-av">N</div>
+              <div>
+                <div class="testi-name">Neha Mehta</div>
+                <div class="testi-treat">Lip Enhancement · Fillers</div>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card reveal delay-4">
+            <div class="testi-qmark">"</div>
+            <div class="testi-stars">★★★★★</div>
+            <div class="testi-text">"Ten years of stubborn pigmentation cleared in four laser sessions. The clinic feels
+              like a luxury spa with genuine medical expertise. Worth every rupee."</div>
+            <div class="testi-author">
+              <div class="testi-av">S</div>
+              <div>
+                <div class="testi-name">Sonia Reddy</div>
+                <div class="testi-treat">Pigmentation · Laser</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALLERY — WHITE BG -->
+    <section class="section" style="background:#fff">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="tag" style="justify-content:center"><span
+              style="width:32px;height:1px;background:var(--gold);display:inline-block"></span>The Experience</div>
+          <h2 class="section-title">A Sanctuary Designed<br>for <em>Your Transformation.</em></h2>
+        </div>
+        <div class="gallery-grid reveal">
+          <div class="g-cell tall wide">
+            
+             <img src="assets/images/laser.png" alt="">
+          </div>
+          <div class="g-cell">
+           <img src="assets/images/Threads.png" alt="">
+           
+          </div>
+          <div class="g-cell">
+            
+            <img src="assets/images/Laser hair reduction.png" alt="">
+          </div>
+          <div class="g-cell">
+            
+            <img src="assets/images/Chemical peel.png" alt="">
+          </div>
+          <div class="g-cell">
+            <img src="assets/images/balanceharmoni.avif" alt="">
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:32px"><button class="btn-outline-dark"
+            onclick="showPage('gallery')" >View Full Gallery →</button></div>
+      </div>
+    </section>
+
+    <!-- INSTAGRAM FEED — DARK BG -->
+    <div class="insta-section reveal">
+      <div class="container">
+        <div class="text-center">
+          <div class="tag" style="justify-content:center;color:var(--gold)"><span
+              style="width:32px;height:1px;background:var(--gold);display:inline-block"></span>Follow Along</div>
+          <h2 class="section-title" style="color:#fff">Behind the Scenes<br>on <em>Instagram.</em></h2>
+        </div>
+        <div class="insta-grid">
+          <div class="insta-cell">
+            
+            <div class="insta-overlay"><img src="assets/images/behind6.png" alt=""></div>
+          </div>
+          <div class="insta-cell">
+            
+            <div class="insta-overlay"><img src="assets/images/behind1.png" alt=""></div>
+          </div>
+          <div class="insta-cell">
+           
+            <div class="insta-overlay"><img src="assets/images/behind2.jpeg" alt=""></div>
+          </div>
+          <div class="insta-cell">
+            
+            <div class="insta-overlay"><img src="assets/images/behind3.png" alt=""></div>
+          </div>
+          <div class="insta-cell">
+            
+            <div class="insta-overlay"><img src="assets/images/behind4.jpeg" alt=""></div>
+          </div>
+          <div class="insta-cell">
+           
+            <div class="insta-overlay"><img src="assets/images/behind5.png" alt=""></div>
+          </div>
+        </div>
+        <div class="insta-handle"><span style="color:rgba(255, 255, 255, 0.986); font-size: 12px;">Follow us at</span><a
+            href="https://www.instagram.com/qalaaesthetics_?igsh=MW53eHl2cmNmbGFlaw==" target="_blank">@drshivangi</a></div>
+      </div>
+    </div>
+
+    <!-- BLOG — IVORY BG -->
+    <section class="section" style="background:var(--ivory)">
+      <div class="container">
+        <div class="text-center reveal">
+          <div class="tag" style="justify-content:center"><span
+              style="width:32px;height:1px;background:var(--gold);display:inline-block"></span>Skin Intelligence</div>
+          <h2 class="section-title">Knowledge is the<br><em>First Step to Beauty.</em></h2>
+        </div>
+        <div class="blog-grid">
+          <div class="blog-card reveal delay-1" onclick="showBlogArticle('botox-science')">
+            <div class="blog-img">
+              <img src="assets/images/antiAGINGNEW.png" alt="">
+            </div>
+            <div class="blog-cat">Anti-Aging</div>
+            <div class="blog-title serif">The Science Behind Botox: What Actually Happens Under Your Skin</div>
+            <div class="blog-excerpt">Botox is more than a wrinkle eraser. Here's the complete science, demystified.
+            </div>
+            <div class="blog-meta">May 2025 · 5 min read</div>
+          </div>
+          <div class="blog-card reveal delay-2" onclick="showBlogArticle('prp-vs-minoxidil')">
+            <div class="blog-img">
+              <img src="assets/images/HAIRCARENEW.png" alt="">
+            </div>
+            <div class="blog-cat">Hair Care</div>
+            <div class="blog-title serif">PRP vs. Minoxidil: Which Works Better for Hair Loss?</div>
+            <div class="blog-excerpt">An honest, evidence-based comparison of the two most popular approaches.</div>
+            <div class="blog-meta">April 2025 · 6 min read</div>
+          </div>
+          <div class="blog-card reveal delay-3" onclick="showBlogArticle('spf-guide')">
+            <div class="blog-img">
+              <img src="assets/images/facecarenew.png" alt="">
+            </div>
+            <div class="blog-cat">Skincare</div>
+            <div class="blog-title serif">SPF 50 vs SPF 30: What Dermatologists Actually Use Daily</div>
+            <div class="blog-excerpt">The sunscreen conversation the beauty industry has been getting wrong.</div>
+            <div class="blog-meta">April 2025 · 4 min read</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:36px"><button class="btn-outline-dark" onclick="showPage('blog')" target="_blank">View
+            All Articles →</button></div>
+      </div>
+    </section>
+
+    <!-- BOOKING CTA — DARK BG -->
+    <section class="section booking-section">
+      <div class="booking-deco" style="width:700px;height:700px;right:-250px;top:50%;transform:translateY(-50%)"></div>
+      <div class="booking-deco" style="width:400px;height:400px;left:-150px;bottom:-100px"></div>
+      <div class="container">
+        <div class="booking-inner">
+          <div class="reveal-left">
+            <div class="tag" style="color:var(--gold)">Your Transformation Awaits</div>
+            <h2 class="section-title" style="color:#fff;font-size:50px">Begin Your<br><em>Glow Journey</em><br>Today.
+            </h2>
+            <p class="subtitle" style="color:rgb(255, 255, 255);margin-bottom:28px; ">Consultations are limited.
+              Reserve your personal session with Dr. Shivangi and take the first step toward your best skin.</p>
+            <a href="https://wa.me/917906402370"
+              target="_blank" class="wa-btn"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> Instant
+              WhatsApp Booking</a>
+            <div class="footer-soc-row">
+            <a href="https://www.instagram.com/qalaaesthetics_?igsh=MW53eHl2cmNmbGFlaw==" target="_blank" class="fsoc" title="Instagram"><i class="fa-brands fa-instagram" style="color: white;"></i></a>
+            <a href="https://www.facebook.com/share/1UCyryxdq5/" target="_blank" class="fsoc" title="Facebook"><i class="fa-brands fa-facebook-f" style="color: white;"></i></a>
+            <a href="#" target="_blank" class="fsoc" title="YouTube"><i class="fa-brands fa-youtube" style="color: white;"></i></a>
+            <a href="https://x.com/QalaAesthetics" target="_blank" class="fsoc" title="x"
+              style="color:hsl(0, 0%, 98%)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/qala-aesthetics-ab73b7403?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="fsoc" title="linkedin"
+              style="color:hsl(0, 0%, 98%)"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+          </div>
+          <div class="reveal-right">
+            <div class="booking-form-box">
+              <p
+                style="font-size:12.5px; font-weight: 600;  letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:22px">
+                ✦ Reserve Your Session</p>
+              <div class="bfg">
+                <input class="b-input" id="bf-name" placeholder="Full Name *" />
+                <input class="b-input" id="bf-phone" placeholder="WhatsApp No. *" />
+                <input class="b-input full" id="bf-email" placeholder="Email Address" />
+                <select class="b-input" id="bf-service">
+                  <option value="">Select Treatment *</option>
+                  <option>Skin Rejuvenation</option>
+                  <option>Anti-Aging / Botox</option>
+                  <option>PRP Hair Therapy</option>
+                  <option>Laser Treatment</option>
+                  <option>Chemical Peel</option>
+                  <option>Pigmentation</option>
+                </select>
+                <input class="b-input" type="date" id="bf-date" />
+                <textarea class="b-input full" rows="3" id="bf-msg" placeholder="Any specific concerns?"
+                  style="resize:none"></textarea>
+              </div>
+              <button class="btn-gold" style="width:100%;padding:14px;margin-top:14px"
+                onclick="submitBookingForm()">Confirm Appointment →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /home page -->
+
+  <!-- ─────────────────────────────────
+     ABOUT PAGE
+───────────────────────────────── -->
+  <div class="page" id="page-about">
+    <div class="inner-hero">
+      <div class="ih-deco" style="width:400px;height:400px;right:-100px;top:50%;transform:translateY(-50%)"></div>
+      <div class="container ih-content">
+        <div class="breadcrumb"><span onclick="showPage('home')">Home</span><span class="bc-sep">›</span><span
+            class="cur">About</span></div>
+        <h1 class="ih-title">Meet Your<br><em>Aesthetic Physician.</em></h1>
+        <p class="ih-sub">Five years of medical excellence, artistry, and a deep commitment to your natural confidence.
+        </p>
+      </div>
+    </div>
+    <div class="about-page">
+      <div class="container">
+        <div class="about-page-grid">
+          <div>
+            <div class="doc-img"><img src="assets/images/dr.shivangi.png" alt=""></div>
+            <div class="qualif-list">
+              <p style="font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:18px 0 10px">
+                Qualifications</p>
+              <div class="qual-item">MBBS — Medical Graduate</div>
+              <div class="qual-item">Diploma in Cosmetology</div>
+              <div class="qual-item">Certified Laser Operator</div>
+              <div class="qual-item">Advanced Injectables (Botox & Fillers)</div>
+              <div class="qual-item">Anti-Aging Medicine Certification</div>
+            </div>
+          </div>
+          <div>
+            <div class="tag">The Doctor Behind Your Glow</div>
+            <h2 class="section-title">Dr. Shivangi —<br><em>Where Science</em><br>Meets Artistry.</h2>
+            <p class="subtitle" style="margin-bottom:14px">Dr. Shivangi is an accomplished Aesthetic Physician and
+              Cosmetologist with over five years of experience in advanced skin, hair, and aesthetic treatments. Known
+              for her refined approach and meticulous attention to detail, she blends medical science with an artistic
+              vision to create results that enhance natural beauty while maintaining each patient's individuality.</p>
+            <p class="subtitle" style="margin-bottom:14px">Her consultation-first philosophy ensures every patient
+              receives a thorough assessment before any treatment begins. She believes that truly exceptional results
+              come from understanding the whole person — not just the concern being treated.</p>
+            <p class="subtitle" style="margin-bottom:28px">Dr. Shivangi continuously updates her skills through
+              international conferences, masterclasses, and hands-on workshops with globally recognised aesthetic
+              experts.</p>
+            <div class="award-strip">
+              <div class="award-item">
+                <div class="award-num">5+</div>
+                <div class="award-lbl">Years Experience</div>
+              </div>
+              <div class="award-item">
+                <div class="award-num">2,800+</div>
+                <div class="award-lbl">Happy Clients</div>
+              </div>
+              <div class="award-item">
+                <div class="award-num">15+</div>
+                <div class="award-lbl">Procedures</div>
+              </div>
+            </div>
+            <div class="timeline">
+              <p style="font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:22px">
+                Journey</p>
+              <div class="tl-item">
+                <div class="tl-year">2019</div>
+                <div class="tl-dot"></div>
+                <div>
+                  <div class="tl-h4">MBBS Completed</div>
+                  <div class="tl-p">Graduated with distinction from a premier medical institution in India.</div>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-year">2020</div>
+                <div class="tl-dot"></div>
+                <div>
+                  <div class="tl-h4">Cosmetology Specialisation</div>
+                  <div class="tl-p">Specialised training in advanced aesthetic and cosmetic procedures.</div>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-year">2021</div>
+                <div class="tl-dot"></div>
+                <div>
+                  <div class="tl-h4">Clinic Established</div>
+                  <div class="tl-p">Launched private aesthetic practice with a philosophy of natural results.</div>
+                </div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-year">2024</div>
+                <div class="tl-dot"></div>
+                <div>
+                  <div class="tl-h4">2,800+ Transformations</div>
+                  <div class="tl-p">Recognised as one of Delhi's most trusted aesthetic physicians.</div>
+                </div>
+              </div>
+            </div>
+            <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
+              <button class="btn-gold" onclick="openModal()">Book Consultation</button>
+              <a href="https://wa.me/917906402370"
+                target="_blank" class="wa-btn"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────
+     TREATMENT INNER PAGE
+───────────────────────────────── -->
+  <div class="page" id="page-treatment">
+    <div class="inner-hero">
+      <div class="ih-deco" style="width:400px;height:400px;right:-100px;top:50%;transform:translateY(-50%)"></div>
+      <div class="container ih-content">
+        <div class="breadcrumb"><span onclick="showPage('home')">Home</span><span class="bc-sep">›</span><span
+            onclick="showPage('home')">Treatments</span><span class="bc-sep">›</span><span class="cur"
+            id="t-bc">Treatment</span></div>
+        <h1 class="ih-title" id="t-hero-title">Treatment</h1>
+        <p class="ih-sub" id="t-hero-sub">Advanced aesthetic treatment.</p>
+      </div>
+    </div>
+    <div class="treat-detail">
+      <div class="container">
+        <div class="treat-detail-grid">
+          <div>
+            <span class="td-tag tag" id="t-tag">✦ Treatment</span>
+            <h2 class="td-h2 serif" id="t-h2">Treatment Name</h2>
+            <p class="td-p" id="t-p1"></p>
+            <p class="td-p" id="t-p2"></p>
+            <ul class="benefit-list" id="t-benefits"></ul>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
+              <button class="btn-gold" onclick="openModal()">Book This Treatment</button>
+              <a href="https://wa.me/917906402370" target="_blank" class="wa-btn"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> Ask on WhatsApp</a>
+            </div>
+          </div>
+          <div>
+            <div class="treat-img" id="t-img"><img src="assets/images/radiance&renewal.avif" alt=""></div>
+            <div class="treat-price-card">
+              <div class="tpc-label">Starting From</div>
+              <div class="tpc-price" id="t-price">₹2,500</div>
+              <div class="tpc-note">Pricing varies by session · Consultation required</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="faq-sec">
+      <div class="container">
+        <div class="text-center">
+          <div class="tag" style="justify-content:center"><span
+              style="width:32px;height:1px;background:var(--gold);display:inline-block"></span>Frequently Asked</div>
+          <h2 class="section-title">Common <em>Questions.</em></h2>
+        </div>
+        <div id="t-faqs" style="margin-top:36px;max-width:780px;margin-left:auto;margin-right:auto"></div>
+        <div style="text-align:center;margin-top:40px">
+          <button class="btn-gold" onclick="openModal()">Book This Treatment →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────
+     GALLERY PAGE
+───────────────────────────────── -->
+  <div class="page" id="page-gallery">
+    <div class="inner-hero">
+      <div class="ih-deco" style="width:400px;height:400px;right:-100px;top:50%;transform:translateY(-50%)"></div>
+      <div class="container ih-content">
+        <div class="breadcrumb"><span onclick="showPage('home')">Home</span><span class="bc-sep">›</span><span
+            class="cur">Gallery</span></div>
+        <h1 class="ih-title">Results &<br><em>Transformations.</em></h1>
+        <p class="ih-sub">Real patients, real results — every image tells a story of renewed confidence.</p>
+      </div>
+    </div>
+    <div class="gpage">
+      <div class="container">
+        <div class="gpage-filters">
+          <button class="gf-btn active" onclick="filterG(this,'all')">All Results</button>
+          <button class="gf-btn" onclick="filterG(this,'skin')">Skin</button>
+          <button class="gf-btn" onclick="filterG(this,'hair')">Hair</button>
+          <button class="gf-btn" onclick="filterG(this,'aesthetic')">Aesthetic</button>
+        </div>
+        <div class="gpage-grid">
+          <div class="gp-item" data-cat="skin">
+             <img src="assets/images/acnetreatmentnew.png" alt="">
+            
+          </div>
+          <!-- <div class="gp-item" data-cat="skin">
+           <img src="assets/images/hydrafacialnew.png" alt="">
+            <div class="gp-overlay"><span class="gp-label">HydraFacial</span></div>
+          </div> -->
+          <div class="gp-item" data-cat="hair">
+            <img src="assets/images/prpnew.png" alt="">
+  
+          </div>
+          <div class="gp-item" data-cat="aesthetic">
+            <img src="assets/images/lip-fillernew.png" alt="">
+            
+          </div>
+          <div class="gp-item" data-cat="skin">
+            <img src="assets/images/laser-treatmentnew.png" alt="">
+           
+          </div>
+          <div class="gp-item" data-cat="aesthetic">
+            <img src="assets/images/botox.png" alt="">
+            
+          </div>
+          <div class="gp-item" data-cat="hair">
+            <img src="assets/images/hairregrowth.png" alt="">
+           
+          </div>
+          <!-- <div class="gp-item" data-cat="skin">
+            <div class="gp-placeholder">Skin Texture</div>
+            <div class="gp-overlay"><span class="gp-label">Chemical Peel</span></div>
+          </div>
+          <div class="gp-item" data-cat="aesthetic">
+            <div class="gp-placeholder">Filler Sculpt</div>
+            <div class="gp-overlay"><span class="gp-label">Dermal Fillers</span></div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────
+     BLOG PAGE
+───────────────────────────────── -->
+  <div class="page" id="page-blog">
+    <div class="inner-hero">
+      <div class="ih-deco" style="width:400px;height:400px;right:-100px;top:50%;transform:translateY(-50%)"></div>
+      <div class="container ih-content">
+        <div class="breadcrumb"><span onclick="showPage('home')">Home</span><span class="bc-sep">›</span><span
+            class="cur">Blog</span></div>
+        <h1 class="ih-title">Skin Intelligence &<br><em>Expert Insights.</em></h1>
+        <p class="ih-sub">Science-backed guides and honest answers from Dr. Shivangi.</p>
+      </div>
+    </div>
+    <div class="blog-page">
+      <div class="container">
+        <div class="blog-page-grid">
+          <div class="blog-grid" style="grid-template-columns:1fr 1fr;margin-top:0">
+            <div class="blog-card" onclick="showBlogArticle('botox-science')">
+              <div class="blog-img">
+                <img src="assets/images/antiAGINGNEW.png" alt="">
+              </div>
+              <div class="blog-cat">Anti-Aging</div>
+              <div class="blog-title serif">The Science Behind Botox: What Actually Happens Under Your Skin</div>
+              <div class="blog-excerpt">Botox is more than a wrinkle eraser — here's the complete science demystified.
+              </div>
+              <div class="blog-meta">May 2025 · 5 min read</div>
+            </div>
+            <div class="blog-card" onclick="showBlogArticle('prp-vs-minoxidil')">
+              <div class="blog-img">
+                <img src="assets/images/HAIRCARENEW.png" alt="">
+              </div>
+              <div class="blog-cat">Hair Care</div>
+              <div class="blog-title serif">PRP vs. Minoxidil: Which Works Better for Hair Loss?</div>
+              <div class="blog-excerpt">An honest, evidence-based comparison of the two most popular approaches.</div>
+              <div class="blog-meta">April 2025 · 6 min read</div>
+            </div>
+            <div class="blog-card" onclick="showBlogArticle('spf-guide')">
+              <div class="blog-img">
+                <img src="assets/images/facecarenew.png" alt="">
+              </div>
+              <div class="blog-cat">Skincare</div>
+              <div class="blog-title serif">SPF 50 vs SPF 30: What Dermatologists Actually Use Daily</div>
+              <div class="blog-excerpt">The sunscreen conversation the beauty industry has been getting wrong.</div>
+              <div class="blog-meta">April 2025 · 4 min read</div>
+            </div>
+            <div class="blog-card" onclick="showBlogArticle('natural-fillers')">
+              <div class="blog-img">
+               <img src="assets/images/aestheticnew.png" alt="">
+              </div>
+              <div class="blog-cat">Aesthetic</div>
+              <div class="blog-title serif">The Art of Natural-Looking Fillers: Why Less Is Always More</div>
+              <div class="blog-excerpt">Dr. Shivangi explains the modern philosophy of subtle enhancement.</div>
+              <div class="blog-meta">March 2025 · 5 min read</div>
+            </div>
+            <div class="blog-card" onclick="showBlogArticle('indian-skin-pigmentation')">
+              <div class="blog-img">
+               <img src="assets/images/pigmentationnew.png" alt="">
+              </div>
+              <div class="blog-cat">Pigmentation</div>
+              <div class="blog-title serif">Why Indian Skin Needs a Different Approach to Pigmentation</div>
+              <div class="blog-excerpt">Melanin-rich skin requires specific protocols. Here's why it matters.</div>
+              <div class="blog-meta">Feb 2025 · 5 min read</div>
+            </div>
+            <div class="blog-card" onclick="showBlogArticle('hydrafacial-vs-facial')">
+              <div class="blog-img">
+                <img src="assets/images/radiance&renewal.avif" alt="">
+              </div>
+              <div class="blog-cat">Skin Care</div>
+              <div class="blog-title serif">HydraFacial vs. Traditional Facial: Is the Price Worth It?</div>
+              <div class="blog-excerpt">We break down results, technology, and longevity — so you can decide.</div>
+              <div class="blog-meta">Feb 2025 · 4 min read</div>
+            </div>
+          </div>
+          <div>
+            <div class="sidebar-card">
+              <div class="sidebar-title serif">Quick Consultation</div>
+              <p class="subtitle" style="margin-bottom:16px;font-size:11px">Have a skin question? Ask Dr. Shivangi
+                directly.</p>
+              <a href="https://wa.me/917906402370"
+                target="_blank" class="wa-btn" style="width:100%;justify-content:center;display:flex"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> Ask on
+                WhatsApp</a>
+            </div>
+            <div class="sidebar-card">
+              <div class="sidebar-title serif">Popular Treatments</div>
+              <div class="sidebar-item" onclick="showTreatment('hydrafacial')">
+                <div class="sidebar-item-img"></div>
+                <div>
+                  <div class="sidebar-item-title">HydraFacial — Glow Treatment</div>
+                  <div class="sidebar-item-date">Skin Rejuvenation</div>
+                </div>
+              </div>
+              <div class="sidebar-item" onclick="showTreatment('botox')">
+                <div class="sidebar-item-img"></div>
+                <div>
+                  <div class="sidebar-item-title">Botox — Anti-Aging</div>
+                  <div class="sidebar-item-date">Aesthetic Procedure</div>
+                </div>
+              </div>
+              <div class="sidebar-item" onclick="showTreatment('prp')">
+                <div class="sidebar-item-img"></div>
+                <div>
+                  <div class="sidebar-item-title">PRP — Hair Restoration</div>
+                  <div class="sidebar-item-date">Hair Treatment</div>
+                </div>
+              </div>
+            </div>
+            <div class="sidebar-card" style="background:var(--dark);border-color:rgba(184,150,90,.2)">
+              <div class="sidebar-title serif" style="color:#fff">Book Consultation</div>
+              <p style="font-size:11px;color:rgb(255, 255, 255);margin-bottom:16px;line-height:1.8">Ready to transform
+                your skin? Book a personal consultation with Dr. Shivangi.</p>
+              <button class="btn-gold" style="width:100%;padding:12px" onclick="openModal()">Book Now →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────
+     BLOG ARTICLE PAGE
+───────────────────────────────── -->
+  <div class="page" id="page-blog-article">
+    <div class="inner-hero">
+      <div class="ih-deco" style="width:400px;height:400px;right:-100px;top:50%;transform:translateY(-50%)"></div>
+      <div class="container ih-content">
+        <div class="breadcrumb"><span onclick="showPage('home')">Home</span><span class="bc-sep">›</span><span
+            onclick="showPage('blog')">Blog</span><span class="bc-sep">›</span><span class="cur"
+            id="art-bc">Article</span></div>
+        <h1 class="ih-title" id="art-title" style="font-size:44px">Article Title</h1>
+        <p class="ih-sub" id="art-meta">By Dr. Shivangi · May 2025</p>
+      </div>
+    </div>
+    <div class="blog-article">
+      <div class="container">
+        <div class="blog-page-grid">
+          <div>
+            <div class="article-hero-img">
+              <div class="blog-img-label" id="art-cat" style="font-size:16px"></div>
+            </div>
+            <div class="article-body" id="art-body"></div>
+            <div
+              style="margin-top:40px;padding-top:32px;border-top:1px solid rgba(184,150,90,.15);display:flex;gap:12px;flex-wrap:wrap">
+              <button class="btn-gold" onclick="openModal()">Book Consultation →</button>
+              <button class="btn-outline-dark" onclick="showPage('blog')">← Back to Blog</button>
+            </div>
+          </div>
+          <div>
+            <div class="sidebar-card">
+              <div class="sidebar-title serif">Ask Dr. Shivangi</div>
+              <p class="subtitle" style="margin-bottom:16px;font-size:11px">Have questions about this treatment? Get a
+                direct answer.</p>
+              <a href="https://wa.me/917906402370"
+                target="_blank" class="wa-btn" style="width:100%;justify-content:center;display:flex"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> Ask on
+                WhatsApp</a>
+            </div>
+            <div class="sidebar-card" style="background:var(--dark);border-color:rgba(184,150,90,.2)">
+              <div class="sidebar-title serif" style="color:#fff">Book Consultation</div>
+              <button class="btn-gold" style="width:100%;padding:12px;margin-top:8px" onclick="openModal()">Book Now
+                →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────
+     CONTACT PAGE
+───────────────────────────────── -->
+  <div class="page" id="page-contact">
+    <div class="inner-hero">
+      <div class="ih-deco" style="width:400px;height:400px;right:-100px;top:50%;transform:translateY(-50%)"></div>
+      <div class="container ih-content">
+        <div class="breadcrumb"><span onclick="showPage('home')">Home</span><span class="bc-sep">›</span><span
+            class="cur">Contact</span></div>
+        <h1 class="ih-title">Book Your<br><em>Consultation.</em></h1>
+        <p class="ih-sub">Reach out via any channel — we respond within 2–4 hours.</p>
+      </div>
+    </div>
+    <div class="contact-page">
+      <div class="container">
+        <div class="contact-grid">
+          <div>
+            <div class="contact-info-panel">
+              <div class="cip-title serif">Let's Connect</div>
+              <div class="cip-sub">Dr. Shivangi Aesthetics</div>
+              <div class="ci-row"><span class="ci-icon"><i class="fa-solid fa-location-dot" style="color: white;"></i></span>
+                <div>
+                  <div class="ci-lbl">Clinic Address</div>
+                  <div class="ci-val">604-605, 6th Floor, Chokhani Square, P-4, Sector 18, Noida - 201301, Uttar Pradesh</div>
+                </div>
+              </div>
+              <div class="ci-row"><span class="ci-icon"><i class="fa-solid fa-phone" style="color: white;"></i></span>
+                <div>
+                  <div class="ci-lbl">Phone</div>
+                  <div class="ci-val"><a href="tel:+917906402370">+917906402370</a></div>
+                </div>
+              </div>
+              <div class="ci-row"><span class="ci-icon"><i class="fa-brands fa-whatsapp" style="color: white;"></i></span>
+                <div>
+                  <div class="ci-lbl">WhatsApp</div>
+                  <div class="ci-val"><a
+                      href="https://wa.me/917906402370"
+                      target="_blank" style="color:#25D366">Chat Now — Instant Reply</a></div>
+                </div>
+              </div>
+              <div class="ci-row"><span class="ci-icon"><i class="fa-regular fa-envelope" style="color: white;"></i></span>
+                <div>
+                  <div class="ci-lbl">Email</div>
+                  <div class="ci-val">qalanoida@gmail.com</div>
+                </div>
+              </div>
+              <div class="ci-row"><span class="ci-icon"><i class="fa-regular fa-clock" style="color: white;"></i></span>
+                <div>
+                  <div class="ci-lbl">Clinic Hours</div>
+                  <div class="ci-val">Mon–Sun: 10AM–7:00PM</div>
+                </div>
+              </div>
+              <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(184,150,90,.15)">
+                <div
+                  style="font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:12px">
+                  Follow Us</div>
+                <div class="footer-soc-row">
+            <a href="https://www.instagram.com/qalaaesthetics_?igsh=MW53eHl2cmNmbGFlaw==" target="_blank" class="fsoc" title="Instagram"><i class="fa-brands fa-instagram" style="color: white;"></i></a>
+            <a href="https://www.facebook.com/share/1UCyryxdq5/" target="_blank" class="fsoc" title="Facebook"><i class="fa-brands fa-facebook-f" style="color: white;"></i></a>
+            <a href="#" target="_blank" class="fsoc" title="YouTube"><i class="fa-brands fa-youtube" style="color: white;"></i></a>
+            <a href="https://x.com/QalaAesthetics" target="_blank" class="fsoc" title="x"
+              style="color:hsl(0, 0%, 98%)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/qala-aesthetics-ab73b7403?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="fsoc" title="linkedin"
+              style="color:hsl(0, 0%, 98%)"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+              </div>
+            </div>
+            <!-- Google Maps embed — replace with real embed code -->
+            <div class="map-placeholder">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.043934471247!2d77.3226406!3d28.5684434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5f63cc24bd5%3A0xf71df20552de445f!2sRadisson%20Blu%20MBD%20Hotel%2C%20Noida!5e0!3m2!1sen!2sin!4v1778760786701!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+          <div class="contact-form-panel">
+            <div class="cfp-title serif">Send a Message</div>
+            <div class="cfp-sub">We reply within 2–4 hours</div>
+            <div class="cf-row">
+              <input class="cf-input" id="cf-fn" placeholder="First Name *" />
+              <input class="cf-input" id="cf-ln" placeholder="Last Name" />
+            </div>
+            <input class="cf-input" id="cf-phone" placeholder="Phone / WhatsApp *" />
+            <input class="cf-input" id="cf-email" placeholder="Email Address" />
+            <select class="cf-input" id="cf-svc">
+              <option value="">Select Treatment of Interest</option>
+              <option>HydraFacial</option>
+              <option>Chemical Peel</option>
+              <option>Botox & Fillers</option>
+              <option>PRP Hair Therapy</option>
+              <option>Laser Treatment</option>
+              <option>Acne Treatment</option>
+              <option>Pigmentation</option>
+              <option>Anti-Aging</option>
+              <option>General Consultation</option>
+            </select>
+            <input class="cf-input" type="date" id="cf-date" />
+            <textarea class="cf-input" rows="4" id="cf-msg" placeholder="Your message or specific concerns..."
+              style="resize:none"></textarea>
+            <button class="btn-gold" style="width:100%;padding:14px" onclick="submitContactForm()">Send Message
+              →</button>
+            <div style="text-align:center;margin-top:18px">
+              <p style="font-size:9px;color:#AAA;margin-bottom:10px;letter-spacing:1px;text-transform:uppercase">Or
+                reach us instantly</p>
+              <a href="https://wa.me/917906402370"
+                target="_blank" class="wa-btn" style="justify-content:center;width:100%;display:flex"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> WhatsApp —
+                Instant Reply</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─────────────────────────────────
+     SHARED FOOTER
+───────────────────────────────── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/qala-logo.png" width="220" alt="">
+          <!-- <h2 class="hed" style="color: white; margin-top: 15px;">About QALA</h2> -->
+          <!-- <p class="desc">
+            Delhi's premier skin & aesthetic clinic, blending Ayurvedic wisdom with modern dermatology. USFDA approved.</p> -->
+          <div class="footer-soc-row">
+           <a href="https://www.instagram.com/qalaaesthetics_?igsh=MW53eHl2cmNmbGFlaw==" target="_blank" class="fsoc" title="Instagram"><i class="fa-brands fa-instagram" style="color: white;"></i></a>
+            <a href="https://www.facebook.com/share/1UCyryxdq5/" target="_blank" class="fsoc" title="Facebook"><i class="fa-brands fa-facebook-f" style="color: white;"></i></a>
+            <a href="#" target="_blank" class="fsoc" title="YouTube"><i class="fa-brands fa-youtube" style="color: white;"></i></a>
+            <a href="https://x.com/QalaAesthetics" target="_blank" class="fsoc" title="x"
+              style="color:hsl(0, 0%, 98%)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/qala-aesthetics-ab73b7403?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="fsoc" title="linkedin"
+              style="color:hsl(0, 0%, 98%)"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        <div>
+          <div class="fcol-title">Skin Treatments</div>
+          <ul class="footer-links" style="color: white;">
+            <li><a onclick="showTreatment('hydrafacial')">HydraFacial</a></li>
+            <li><a onclick="showTreatment('chemical-peel')">Chemical Peel</a></li>
+            <li><a onclick="showTreatment('acne')">Acne Treatment</a></li>
+            <li><a onclick="showTreatment('pigmentation')">Pigmentation</a></li>
+            <li><a onclick="showTreatment('anti-aging')">Anti-Aging</a></li>
+            <li><a onclick="showTreatment('skin-brightening')">Skin Brightening</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="fcol-title">Hair & Aesthetic</div>
+          <ul class="footer-links" style="color: white;">
+            <li><a onclick="showTreatment('prp')">PRP Therapy</a></li>
+            <li><a onclick="showTreatment('hair-regrowth')">Hair Regrowth</a></li>
+            <li><a onclick="showTreatment('hair-fall')">Hair Fall Control</a></li>
+            <li><a onclick="showTreatment('botox')">Botox</a></li>
+            <li><a onclick="showTreatment('fillers')">Dermal Fillers</a></li>
+            <li><a onclick="showTreatment('laser')">Laser Treatments</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="fcol-title">Contact</div>
+          <div class="fcon"><span class="fcon-icon"><i class="fa-solid fa-location-dot" style="color: white;"></i></span>
+            <div class="fcon-text">604-605, 6th Floor, Chokhani Square,  P-4, Sector 18, Noida - 201301, Uttar Pradesh</div>
+          </div>
+          <div class="fcon"><span class="fcon-icon"><i class="fa-solid fa-phone" style="color: white;"></i></span>
+            <div class="fcon-text"><a href="tel:+917906402370">+917906402370</a></div>
+          </div>
+          <div class="fcon"><span class="fcon-icon"><i class="fa-solid fa-phone" style="color: white;"></i></span>
+            <div class="fcon-text"><a href="tel:+9112032158143">+9112032158143</a></div>
+          </div>
+          <div class="fcon"><span class="fcon-icon"><i class="fa-brands fa-whatsapp" style="color: white;"></i></span>
+            <div class="fcon-text"><a href="https://wa.me/917906402370" target="_blank">WhatsApp
+                Us</a></div>
+          </div>
+          <div class="fcon"><span class="fcon-icon"><i class="fa-solid fa-envelope" style="color: white;"></i></span>
+            <div class="fcon-text">qalanoida@gmail.com</div>
+          </div>
+          <div class="fcon"><span class="fcon-icon"><i class="fa-regular fa-clock" style="color: white;"></i></span>
+            <div class="fcon-text">Mon–Sun: 10AM–7:00PM</div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">© 2026 Qala Aesthetics. All Rights Reserved.</div>
+        <div class="footer-legal"><a>Privacy Policy</a><a>Terms</a><a onclick="showPage('contact')">Contact</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="float-wrap">
+    <a href="https://wa.me/917906402370"
+      target="_blank" class="float-wa" title="WhatsApp — Book Now"><i class="fa-brands fa-whatsapp"
+        style="color: white;"></i></a>
+    <a href="tel:+917906402370" class="float-call" title="Call Now"><i class="fa-solid fa-phone"
+        style="color: white;"></i></a>
+  </div>
+
+  <!-- BOOKING MODAL -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal">
+      <div class="modal-head">
+        <div>
+          <div class="modal-title serif">Book Consultation</div>
+          <div class="modal-sub">✦ Dr. Shivangi Aesthetics · New Delhi</div>
+        </div>
+        <button class="modal-close" onclick="closeModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="m-row"><input class="m-input" id="m-name" placeholder="Full Name *" /><input class="m-input"
+            id="m-phone" placeholder="WhatsApp No. *" /></div>
+        <input class="m-input" id="m-email" placeholder="Email Address" style="width:100%" />
+        <select class="m-input" id="m-svc" style="width:100%">
+          <option value="">Select Treatment *</option>
+          <option>HydraFacial</option>
+          <option>Chemical Peel</option>
+          <option>Acne Treatment</option>
+          <option>Pigmentation</option>
+          <option>Botox & Fillers</option>
+          <option>PRP Hair Therapy</option>
+          <option>Laser Treatment</option>
+          <option>Anti-Aging</option>
+          <option>General Consultation</option>
+        </select>
+        <div class="m-row">
+          <input class="m-input" type="date" id="m-date" />
+          <select class="m-input" id="m-time">
+            <option value="">Preferred Time</option>
+            <option>10:00 AM</option>
+            <option>11:00 AM</option>
+            <option>12:00 PM</option>
+            <option>2:00 PM</option>
+            <option>3:00 PM</option>
+            <option>4:00 PM</option>
+            <option>5:00 PM</option>
+            <option>6:00 PM</option>
+          </select>
+        </div>
+        <button class="btn-gold" style="width:100%;padding:14px;margin-bottom:11px" onclick="submitModal()">Confirm
+          Booking →</button>
+        <a href="https://wa.me/917906402370"
+          target="_blank" class="wa-btn" style="justify-content:center;width:100%;display:flex"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> Book via WhatsApp
+          Instead</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div id="toast">
+    <div class="toast-inner"><span class="toast-icon">✓</span><span id="toast-msg">Done!</span></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/script.js"></script>
+</body>
+
+</html>
