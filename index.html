@@ -32,6 +32,12 @@
 </head>
 
 <body>
+  <!-- <div class="preloader hidden">
+    <div class="preloader-logo">
+      <img src="assets/images/" alt="Qala Aesthetics Logo">
+    </div>
+    <div class="preloader-line"></div>
+  </div> -->
 
   <!-- ─────────────────────────────────
      NAVBAR
@@ -49,15 +55,7 @@
       <div class="nav-item">
         <span class="nav-link">Treatments <span class="nav-arrow"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" fill="#fff" viewBox="0 0 640 640"><path d="M297.4 438.6C309.9 451.1 330.2 451.1 342.7 438.6L502.7 278.6C515.2 266.1 515.2 245.8 502.7 233.3C490.2 220.8 469.9 220.8 457.4 233.3L320 370.7L182.6 233.4C170.1 220.9 149.8 220.9 137.3 233.4C124.8 245.9 124.8 266.2 137.3 278.7L297.3 438.7z"/></svg></span></span>
         <div class="dropdown mega">
-          <div class="mega-col">
-            <div class="mega-col-hd">Skin Treatments</div>
-            <div class="drop-link" onclick="showTreatment('hydrafacial')">HydraFacial</div>
-            <div class="drop-link" onclick="showTreatment('chemical-peel')">Chemical Peel</div>
-            <div class="drop-link" onclick="showTreatment('acne')">Acne Treatment</div>
-            <div class="drop-link" onclick="showTreatment('pigmentation')">Pigmentation</div>
-            <div class="drop-link" onclick="showTreatment('skin-brightening')">Skin Brightening</div>
-            <div class="drop-link" onclick="showTreatment('anti-aging')">Anti-Aging</div>
-          </div>
+          
           <div class="mega-col">
             <div class="mega-col-hd">Hair Treatments</div>
             <div class="drop-link" onclick="showTreatment('prp')">PRP Therapy</div>
@@ -73,13 +71,23 @@
             <div class="drop-link" onclick="showTreatment('laser')">Laser Treatments</div>
             <div class="drop-link" onclick="showTreatment('skin-tightening')">Skin Tightening</div>
           </div>
+          <div class="mega-col">
+            <div class="mega-col-hd">Skin Treatments</div>
+            <div class="drop-link" onclick="showTreatment('hydrafacial')">HydraFacial</div>
+            <div class="drop-link" onclick="showTreatment('chemical-peel')">Chemical Peel</div>
+            <div class="drop-link" onclick="showTreatment('acne')">Acne Treatment</div>
+            <div class="drop-link" onclick="showTreatment('pigmentation')">Pigmentation</div>
+            <div class="drop-link" onclick="showTreatment('skin-brightening')">Skin Brightening</div>
+            <div class="drop-link" onclick="showTreatment('anti-aging')">Anti-Aging</div>
+          </div>
+          
         </div>
       </div>
 
       <div class="nav-item"><span class="nav-link" onclick="showPage('gallery')">Gallery</span></div>
       <div class="nav-item"><span class="nav-link" onclick="showPage('blog')">Blog</span></div>
       <div class="nav-item"><span class="nav-link" onclick="showPage('contact')">Contact</span></div>
-      <button class="nav-cta" onclick="openModal()">Book Consultation</button>
+      <button class="nav-cta" onclick="showPage('contact')">Book Consultation</button>
     </div>
 
     <div class="hamburger" id="ham" onclick="toggleMob()">
@@ -92,14 +100,7 @@
 <div class="mob-menu" id="mobMenu">
   <div class="mob-link" onclick="showPage('home');closeMob()">Home</div>
   <div class="mob-link" onclick="showPage('about');closeMob()">About Dr. Shivangi</div>
-  <div class="mob-link" onclick="toggleMobSub('ms1')">Skin Treatments <span id="ms1-arrow">▾</span></div>
-  <div class="mob-sub-wrap" id="ms1">
-    <div class="mob-sub" onclick="showTreatment('hydrafacial');closeMob()">→ HydraFacial</div>
-    <div class="mob-sub" onclick="showTreatment('chemical-peel');closeMob()">→ Chemical Peel</div>
-    <div class="mob-sub" onclick="showTreatment('acne');closeMob()">→ Acne Treatment</div>
-    <div class="mob-sub" onclick="showTreatment('pigmentation');closeMob()">→ Pigmentation</div>
-    <div class="mob-sub" onclick="showTreatment('anti-aging');closeMob()">→ Anti-Aging</div>
-  </div>
+  
   <div class="mob-link" onclick="toggleMobSub('ms2')">Hair Treatments <span id="ms2-arrow">▾</span></div>
   <div class="mob-sub-wrap" id="ms2">
     <div class="mob-sub" onclick="showTreatment('prp');closeMob()">→ PRP Therapy</div>
@@ -113,11 +114,19 @@
     <div class="mob-sub" onclick="showTreatment('lip');closeMob()">→ Lip Enhancement</div>
     <div class="mob-sub" onclick="showTreatment('laser');closeMob()">→ Laser Treatments</div>
   </div>
+  <div class="mob-link" onclick="toggleMobSub('ms1')">Skin Treatments <span id="ms1-arrow">▾</span></div>
+  <div class="mob-sub-wrap" id="ms1">
+    <div class="mob-sub" onclick="showTreatment('hydrafacial');closeMob()">→ HydraFacial</div>
+    <div class="mob-sub" onclick="showTreatment('chemical-peel');closeMob()">→ Chemical Peel</div>
+    <div class="mob-sub" onclick="showTreatment('acne');closeMob()">→ Acne Treatment</div>
+    <div class="mob-sub" onclick="showTreatment('pigmentation');closeMob()">→ Pigmentation</div>
+    <div class="mob-sub" onclick="showTreatment('anti-aging');closeMob()">→ Anti-Aging</div>
+  </div>
   <div class="mob-link" onclick="showPage('gallery');closeMob()">Gallery</div>
   <div class="mob-link" onclick="showPage('blog');closeMob()">Blog</div>
   <div class="mob-link" onclick="showPage('contact');closeMob()">Contact</div>
   <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px">
-    <button class="btn-gold" style="width:100%;padding:14px" onclick="openModal();closeMob()">Book Consultation</button>
+    <button class="btn-gold" style="width:100%;padding:14px" onclick="showPage('contact')">Book Consultation</button>
     <a href="https://wa.me/917906402370" target="_blank" class="wa-btn" style="justify-content:center;width:100%"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> WhatsApp Us</a>
   </div>
   <div style="display:flex;gap:12px;margin-top:20px;justify-content:center">
@@ -150,34 +159,37 @@
           <h1 class="hero-h1">Your Skin<br>Deserves <br> <em>Expert Care.</em></h1>
           <p class="hero-sub">Advanced treatments for glowing skin, healthy hair, and natural beauty enhancement.</p>
           <div class="hero-btns">
-            <button class="btn-gold" onclick="openModal()">Book Appointment</button>
+            <button class="btn-gold1" onclick="showPage('contact')">Book Appointment</button>
             <a href="tel:+917906402370">
             <button class="btn-outline-light" onclick="scrollToTreatments()"> Call Now </button></a>
           </div>
           <div class="hero-stats">
-            <div class="hstat">
-              <div class="num">5+</div>
-              <div class="lbl">Years Expertise</div>
-            </div>
-            <div class="hstat">
-              <div class="num">2,800+</div>
-              <div class="lbl">Happy Clients</div>
-            </div>
-            <div class="hstat">
-              <div class="num">15+</div>
-              <div class="lbl">Treatments</div>
-            </div>
-            <div class="hstat">
-              <div class="num">100%</div>
-              <div class="lbl">Natural Results</div>
-            </div>
-          </div>
+  <div class="hstat">
+    <div class="num">5+</div>
+    <div class="lbl">Years Expertise</div>
+  </div>
+
+  <div class="hstat">
+    <div class="num">2.8k+</div>
+    <div class="lbl">Happy Clients</div>
+  </div>
+
+  <div class="hstat">
+    <div class="num">15+</div>
+    <div class="lbl">Treatments</div>
+  </div>
+
+  <div class="hstat">
+    <div class="num">100%</div>
+    <div class="lbl">Natural Results</div>
+  </div>
+</div>
         </div>
         <div class="hero-right" id="heroCard">
           <div class="hero-card">
             <div class="hcard-head">
               <div class="hcard-head-dot"></div>
-              <p style="font-size: 15px; font-weight: 600;">Book Your Appointment</p>
+              <p style="font-size: 15px; font-weight: 600;" onclick="showPage('contact')">Book Your Appointment</p>
             </div>
             <div class="hcard-body">
               <input class="hf" id="hf-name" placeholder="Your Full Name *" />
@@ -200,17 +212,22 @@
               <a href="https://wa.me/917906402370"
                 target="_blank" class="hcard-wa"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> Chat on
                 WhatsApp</a>
+                
             </div>
+
           </div>
+          
         </div>
       </div>
       <!-- <div class="scroll-hint">
         <div class="scroll-line"></div>SCROLL
       </div> -->
+     
+    
     </section>
 
-    <!-- MARQUEE -->
-    <div class="marquee-wrap">
+     <!-- MARQUEE -->
+       <div class="marquee-wrap">
       <div class="marquee-track">
         <span class="mi"><span class="mi-dot"></span>HydraFacial</span><span class="mi"><span
             class="mi-dot"></span>Botox & Fillers</span><span class="mi"><span class="mi-dot"></span>PRP Hair
@@ -262,7 +279,7 @@
                 <div class="ac-lbl">Years Exp.</div>
               </div>
               <div>
-                <div class="ac-num">2,800+</div>
+                <div class="ac-num">2.8k+</div>
                 <div class="ac-lbl">Patients</div>
               </div>
               <div>
@@ -271,8 +288,8 @@
               </div>
             </div>
             <div style="margin-top:30px;display:flex;gap:12px;flex-wrap:wrap">
-              <button class="btn-gold" onclick="showPage('about')">Know More →</button>
-              <button class="btn-outline-dark" onclick="openModal()">Book Consultation</button>
+              <button class="btn-gold2" onclick="showPage('about')">Know More →</button>
+              <button class="btn-outline-dark2" onclick="showPage('contact')">Book Consultation</button>
             </div>
           </div>
         </div>
@@ -339,7 +356,7 @@
             <h2 class="section-title">Why Discerning Clients<br>Choose <em>Dr. Shivangi.</em></h2>
             <p class="subtitle">At every touchpoint — from consultation to aftercare — the experience is curated for
               those who value precision, discretion, and genuine results.</p>
-            <div style="margin-top:28px"><button class="btn-gold" onclick="openModal()">Book Consultation</button></div>
+            <div style="margin-top:28px"><button class="btn-gold" onclick="showPage('contact')">Book Consultation</button></div>
           </div>
           <div class="why-grid reveal-right">
             <div class="why-card">
@@ -694,7 +711,7 @@
               Reserve your personal session with Dr. Shivangi and take the first step toward your best skin.</p>
             <a href="https://wa.me/917906402370"
               target="_blank" class="wa-btn"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> Instant
-              WhatsApp Booking</a>
+             Booking</a>
             <div class="footer-soc-row">
             <a href="https://www.instagram.com/qalaaesthetics_?igsh=MW53eHl2cmNmbGFlaw==" target="_blank" class="fsoc" title="Instagram"><i class="fa-brands fa-instagram" style="color: white;"></i></a>
             <a href="https://www.facebook.com/share/1UCyryxdq5/" target="_blank" class="fsoc" title="Facebook"><i class="fa-brands fa-facebook-f" style="color: white;"></i></a>
@@ -728,7 +745,7 @@
                   style="resize:none"></textarea>
               </div>
               <button class="btn-gold" style="width:100%;padding:14px;margin-top:14px"
-                onclick="submitBookingForm()">Confirm Appointment →</button>
+                onclick="submitBookingForm()">Confirm Appointment</button>
             </div>
           </div>
         </div>
@@ -757,7 +774,7 @@
           <div>
             <div class="doc-img"><img src="assets/images/dr.shivangi.png" alt=""></div>
             <div class="qualif-list">
-              <p style="font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:18px 0 10px">
+              <p style="font-size:13px; font-weight: 600; letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin:18px 0 10px;">
                 Qualifications</p>
               <div class="qual-item">MBBS — Medical Graduate</div>
               <div class="qual-item">Diploma in Cosmetology</div>
@@ -768,7 +785,7 @@
           </div>
           <div>
             <div class="tag">The Doctor Behind Your Glow</div>
-            <h2 class="section-title">Dr. Shivangi —<br><em>Where Science</em><br>Meets Artistry.</h2>
+            <h2 class="section-title">Dr. Shivangi — <em>Where Science</em><br>Meets Artistry.</h2>
             <p class="subtitle" style="margin-bottom:14px">Dr. Shivangi is an accomplished Aesthetic Physician and
               Cosmetologist with over five years of experience in advanced skin, hair, and aesthetic treatments. Known
               for her refined approach and meticulous attention to detail, she blends medical science with an artistic
@@ -794,7 +811,7 @@
               </div>
             </div>
             <div class="timeline">
-              <p style="font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:22px">
+              <p style="font-size:13px; font-weight: 600; letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:22px">
                 Journey</p>
               <div class="tl-item">
                 <div class="tl-year">2019</div>
@@ -830,7 +847,7 @@
               </div>
             </div>
             <div style="margin-top:32px;display:flex;gap:12px;flex-wrap:wrap">
-              <button class="btn-gold" onclick="openModal()">Book Consultation</button>
+              <button class="btn-gold" onclick="showPage('contact')">Book Consultation</button>
               <a href="https://wa.me/917906402370"
                 target="_blank" class="wa-btn"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> WhatsApp</a>
             </div>
@@ -864,7 +881,7 @@
             <p class="td-p" id="t-p2"></p>
             <ul class="benefit-list" id="t-benefits"></ul>
             <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:30px">
-              <button class="btn-gold" onclick="openModal()">Book This Treatment</button>
+              <button class="btn-gold" onclick="showPage('contact')">Book This Treatment</button>
               <a href="https://wa.me/917906402370" target="_blank" class="wa-btn"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> Ask on WhatsApp</a>
             </div>
           </div>
@@ -888,7 +905,7 @@
         </div>
         <div id="t-faqs" style="margin-top:36px;max-width:780px;margin-left:auto;margin-right:auto"></div>
         <div style="text-align:center;margin-top:40px">
-          <button class="btn-gold" onclick="openModal()">Book This Treatment →</button>
+          <button class="btn-gold" onclick="showPage('contact')">Book This Treatment →</button>
         </div>
       </div>
     </div>
@@ -1067,7 +1084,7 @@
               <div class="sidebar-title serif" style="color:#fff">Book Consultation</div>
               <p style="font-size:11px;color:rgb(255, 255, 255);margin-bottom:16px;line-height:1.8">Ready to transform
                 your skin? Book a personal consultation with Dr. Shivangi.</p>
-              <button class="btn-gold" style="width:100%;padding:12px" onclick="openModal()">Book Now →</button>
+              <button class="btn-gold" style="width:100%;padding:12px" onclick="showPage('contact')">Book Now →</button>
             </div>
           </div>
         </div>
@@ -1099,7 +1116,7 @@
             <div class="article-body" id="art-body"></div>
             <div
               style="margin-top:40px;padding-top:32px;border-top:1px solid rgba(184,150,90,.15);display:flex;gap:12px;flex-wrap:wrap">
-              <button class="btn-gold" onclick="openModal()">Book Consultation →</button>
+              <button class="btn-gold" onclick="showPage('contact')">Book Consultation →</button>
               <button class="btn-outline-dark" onclick="showPage('blog')">← Back to Blog</button>
             </div>
           </div>
@@ -1113,8 +1130,8 @@
                 WhatsApp</a>
             </div>
             <div class="sidebar-card" style="background:var(--dark);border-color:rgba(184,150,90,.2)">
-              <div class="sidebar-title serif" style="color:#fff">Book Consultation</div>
-              <button class="btn-gold" style="width:100%;padding:12px;margin-top:8px" onclick="openModal()">Book Now
+              <div class="sidebar-title serif" style="color:#fff" onclick="showPage('contact')">Book Consultation</div>
+              <button class="btn-gold" style="width:100%;padding:12px;margin-top:8px" onclick="showPage('contact')">Book Now
                 →</button>
             </div>
           </div>
@@ -1245,7 +1262,7 @@
           <!-- <h2 class="hed" style="color: white; margin-top: 15px;">About QALA</h2> -->
           <!-- <p class="desc">
             Delhi's premier skin & aesthetic clinic, blending Ayurvedic wisdom with modern dermatology. USFDA approved.</p> -->
-          <div class="footer-soc-row">
+          <div class="footer-soc-row1">
            <a href="https://www.instagram.com/qalaaesthetics_?igsh=MW53eHl2cmNmbGFlaw==" target="_blank" class="fsoc" title="Instagram"><i class="fa-brands fa-instagram" style="color: white;"></i></a>
             <a href="https://www.facebook.com/share/1UCyryxdq5/" target="_blank" class="fsoc" title="Facebook"><i class="fa-brands fa-facebook-f" style="color: white;"></i></a>
             <a href="#" target="_blank" class="fsoc" title="YouTube"><i class="fa-brands fa-youtube" style="color: white;"></i></a>
@@ -1356,7 +1373,7 @@
             <option>6:00 PM</option>
           </select>
         </div>
-        <button class="btn-gold" style="width:100%;padding:14px;margin-bottom:11px" onclick="submitModal()">Confirm
+        <button class="btn-gold" style="width:100%;padding:14px;margin-bottom:11px" onclick="showPage('contact')">Confirm
           Booking →</button>
         <a href="https://wa.me/917906402370"
           target="_blank" class="wa-btn" style="justify-content:center;width:100%;display:flex"><svg xmlns="http://www.w3.org/2000/svg" height="30" width="30" fill="#fff" viewBox="0 0 640 640"><path d="M476.9 161.1C435 119.1 379.2 96 319.9 96C197.5 96 97.9 195.6 97.9 318C97.9 357.1 108.1 395.3 127.5 429L96 544L213.7 513.1C246.1 530.8 282.6 540.1 319.8 540.1L319.9 540.1C442.2 540.1 544 440.5 544 318.1C544 258.8 518.8 203.1 476.9 161.1zM319.9 502.7C286.7 502.7 254.2 493.8 225.9 477L219.2 473L149.4 491.3L168 423.2L163.6 416.2C145.1 386.8 135.4 352.9 135.4 318C135.4 216.3 218.2 133.5 320 133.5C369.3 133.5 415.6 152.7 450.4 187.6C485.2 222.5 506.6 268.8 506.5 318.1C506.5 419.9 421.6 502.7 319.9 502.7zM421.1 364.5C415.6 361.7 388.3 348.3 383.2 346.5C378.1 344.6 374.4 343.7 370.7 349.3C367 354.9 356.4 367.3 353.1 371.1C349.9 374.8 346.6 375.3 341.1 372.5C308.5 356.2 287.1 343.4 265.6 306.5C259.9 296.7 271.3 297.4 281.9 276.2C283.7 272.5 282.8 269.3 281.4 266.5C280 263.7 268.9 236.4 264.3 225.3C259.8 214.5 255.2 216 251.8 215.8C248.6 215.6 244.9 215.6 241.2 215.6C237.5 215.6 231.5 217 226.4 222.5C221.3 228.1 207 241.5 207 268.8C207 296.1 226.9 322.5 229.6 326.2C232.4 329.9 268.7 385.9 324.4 410C359.6 425.2 373.4 426.5 391 423.9C401.7 422.3 423.8 410.5 428.4 397.5C433 384.5 433 373.4 431.6 371.1C430.3 368.6 426.6 367.2 421.1 364.5z"/></svg> Book via WhatsApp
@@ -1370,8 +1387,40 @@
     <div class="toast-inner"><span class="toast-icon">✓</span><span id="toast-msg">Done!</span></div>
   </div>
 
+  
+  <script>
+//         // ═══════════════ TREATMENT DATA ═══════════════
+//     var T = {
+//       'hydrafacial': { bc: 'HydraFacial', title: 'HydraFacial', sub: 'Deep cleanse, extract, and hydrate for an instant luminous glow.', tag: '✦ Skin Treatment', h2: 'HydraFacial —<br>The <em>Signature Glow</em> Treatment.', p1: 'HydraFacial is a multi-step medical-grade facial that combines cleansing, exfoliation, extraction, hydration, and antioxidant protection simultaneously. It uses a patented vortex-fusion delivery system for immediate, visible results.', p2: 'Dr. Shivangi customises each session to your specific skin concerns — dullness, congested pores, fine lines, or uneven texture. Result: radiant, glass-skin glow after the very first session.', benefits: ['Deep pore cleansing without discomfort', 'Instant hydration with hyaluronic acid', 'Reduces fine lines and improves texture', 'Safe for all skin types including sensitive', 'Zero downtime — perfect before events'], price: '₹3,500', faqs: [{ q: 'How long does a session take?', a: 'A standard session takes 30–45 minutes. Dr. Shivangi may extend this with personalised add-ons.' }, { q: 'How many sessions do I need?', a: 'Many see results after one session. For lasting improvement, a course of 4–6 monthly sessions is recommended.' }, { q: 'Is there any downtime?', a: 'None at all. You can resume normal activities and wear makeup immediately after.' }, { q: 'What concerns does it address?', a: 'Dullness, enlarged pores, oily skin, congestion, fine lines, dehydration, and uneven skin tone.' }] },
+//       'botox': { bc: 'Botox', title: 'Botox', sub: 'Smooth fine lines and restore youthful freshness with precision injectables.', tag: '✦ Aesthetic Treatment', h2: 'Botox —<br>Precision <em>Anti-Aging</em> Artistry.', p1: 'Botox is one of the most studied, safe, and effective treatments in aesthetic medicine. Dr. Shivangi uses micro-dosing techniques to relax targeted facial muscles — smoothing expression lines while preserving your natural expressions.', p2: "The goal is never a frozen or unnatural appearance. Dr. Shivangi's philosophy is refreshed, not retouched — results that make you look well-rested and naturally radiant.", benefits: ['Smooths forehead lines, frown lines & crow\'s feet', 'Preserves natural facial expressions', 'Results visible in 3–7 days', 'Lasts 4–6 months', 'No downtime required'], price: '₹8,000', faqs: [{ q: 'Does Botox hurt?', a: 'Most describe it as a minor pinch. Ultra-fine needles and topical numbing ensure maximum comfort.' }, { q: 'How long do results last?', a: 'Typically 4–6 months. With regular treatment, many patients need less product over time.' }, { q: 'What\'s the recovery like?', a: 'Minimal to none. Mild redness or swelling at injection sites resolves within hours.' }, { q: 'Can I combine Botox with fillers?', a: 'Yes — a combination approach often delivers the most balanced, natural result.' }] },
+//       'prp': { bc: 'PRP Therapy', title: 'PRP Hair Therapy', sub: 'Harness your own biology to reverse hair loss and restore density.', tag: '✦ Hair Treatment', h2: 'PRP Therapy —<br><em>Biological Hair</em> Restoration.', p1: 'Platelet-Rich Plasma therapy uses your body\'s own growth factors to stimulate dormant hair follicles and reverse hair thinning. Dr. Shivangi prepares a concentrated PRP solution from your blood and precisely injects it into the scalp.', p2: 'PRP is clinically proven, completely natural, and delivers visible results in density, thickness, and scalp health within 3–4 months of starting treatment.', benefits: ['Uses your own blood — completely natural', 'Stimulates dormant follicles to regrow', 'Improves hair density and thickness', 'Effective for male and female pattern loss', 'Zero risk of allergic reaction'], price: '₹6,000', faqs: [{ q: 'How many PRP sessions are needed?', a: 'Typically 3–4 sessions spaced 4 weeks apart, followed by maintenance every 4–6 months.' }, { q: 'Who is a good candidate?', a: 'PRP works best for early to mid stages of hair loss. Consultation determines suitability.' }, { q: 'When will I see results?', a: 'Initial results from 2–3 months; optimal results at 6 months after completing a course.' }, { q: 'Is the procedure painful?', a: 'A topical anaesthetic is applied before the session, making treatment very comfortable.' }] },
+//       'chemical-peel': { bc: 'Chemical Peel', title: 'Chemical Peel', sub: 'Resurface, brighten, and renew your skin with a medically-guided peel.', tag: '✦ Skin Treatment', h2: 'Chemical Peel —<br><em>Resurfaced, Renewed</em> Radiance.', p1: 'Medical-grade peels use carefully selected acids to exfoliate the skin\'s surface layers, revealing fresher, brighter skin beneath. Dr. Shivangi selects from a range of peel strengths based on your skin type and concerns.', p2: 'Chemical peels dramatically improve acne, pigmentation, fine lines, dullness, and uneven texture. As an aesthetic physician, Dr. Shivangi can prescribe peels significantly more effective than spa-grade alternatives.', benefits: ['Brightens dull, tired complexion', 'Reduces acne and post-acne marks', 'Fades pigmentation and sun damage', 'Smooths fine lines and skin texture', 'Stimulates collagen production'], price: '₹2,500', faqs: [{ q: 'Is it safe for Indian skin?', a: 'Yes, when prescribed and performed by a qualified physician specialising in melanin-rich skin.' }, { q: 'How much downtime?', a: 'Superficial peels: 1–3 days. Medium peels: 5–7 days. Dr. Shivangi advises based on your peel.' }, { q: 'Can I wear makeup after?', a: 'Avoid makeup for 24–48 hours post-treatment to allow skin to breathe and heal.' }, { q: 'How many sessions?', a: 'A series of 4–6 peels spaced 2–4 weeks apart delivers the best results.' }] },
+//       'acne': { bc: 'Acne Treatment', title: 'Acne Treatment', sub: 'Medically-targeted protocols to clear, control and prevent acne.', tag: '✦ Skin Treatment', h2: 'Acne Treatment —<br><em>Clear Skin,</em> Restored Confidence.', p1: 'Acne is a complex medical condition requiring a multi-modal approach. Dr. Shivangi combines in-clinic treatments — chemical peels, laser therapy, and extractions — with personalised skincare and lifestyle protocols.', p2: 'Whether you\'re dealing with active acne, post-acne marks, or deep scars, Dr. Shivangi creates a targeted plan addressing the root cause rather than surface symptoms.', benefits: ['Treats active acne & prevents new breakouts', 'Reduces post-acne hyperpigmentation', 'Improves acne scar texture', 'Safe for all acne grades', 'Prescription-strength solutions'], price: '₹3,000', faqs: [{ q: 'How long to see results?', a: 'Improvement seen within 4–6 weeks. Full clearance may take 3–6 months depending on severity.' }, { q: 'Can adult acne be treated?', a: 'Absolutely. Adult hormonal acne responds well to targeted aesthetic medicine approaches.' }, { q: 'Will it make skin dry?', a: 'Dr. Shivangi tailors protocols to minimise side effects, incorporating barrier-repair products.' }, { q: 'Do I need to avoid sun?', a: 'SPF 50 is essential throughout treatment. Sun exposure can worsen pigmentation.' }] },
+//       'pigmentation': { bc: 'Pigmentation', title: 'Pigmentation Treatment', sub: 'Target dark spots, melasma and uneven tone for luminous clarity.', tag: '✦ Skin Treatment', h2: 'Pigmentation —<br><em>Even Tone,</em> Luminous Clarity.', p1: 'Pigmentation requires a precision-guided treatment approach. Dr. Shivangi combines chemical peels, laser therapy, and targeted topicals to achieve progressive, lasting results.', p2: "Treating pigmentation in Indian skin tones requires special care and expertise. Dr. Shivangi's deep understanding of melanin-rich skin ensures safe, effective brightening without risk.", benefits: ['Fades dark spots, melasma and sun damage', 'Specialist protocols for Indian skin', 'Combination approach for superior results', 'Progressive, lasting improvement', 'Safe for all skin types'], price: '₹4,000', faqs: [{ q: 'Can melasma be permanently cured?', a: 'Melasma is a chronic condition that can be well-controlled. Dr. Shivangi creates a long-term management plan.' }, { q: 'How many sessions to see results?', a: 'Visible improvement after 2–3 sessions. A full course of 6 delivers the best, most lasting results.' }, { q: 'Is laser safe for dark skin tones?', a: 'Yes, with the right laser settings. Dr. Shivangi specialises in pigmentation for Indian and South Asian skin.' }, { q: 'What maintenance is needed?', a: 'Daily SPF 50+, a prescribed skincare routine, and periodic follow-up sessions ensure long-lasting results.' }] },
+//       'anti-aging': { bc: 'Anti-Aging', title: 'Anti-Aging Treatment', sub: 'Turn back the clock with science-backed rejuvenation protocols.', tag: '✦ Aesthetic Treatment', h2: 'Anti-Aging —<br><em>Timeless</em> Rejuvenation.', p1: "Ageing is inevitable — but how you age is a choice. Dr. Shivangi's anti-aging protocols combine Botox, fillers, skin boosters, energy-based devices, and medical skincare to comprehensively restore youth.", p2: 'The goal is never to look different — it\'s to look like the best, most refreshed version of yourself. Every treatment is calibrated to your unique facial anatomy.', benefits: ['Smooths fine lines and deep wrinkles', 'Restores lost facial volume naturally', 'Improves skin texture and radiance', 'Lifts and tightens skin non-surgically', 'Comprehensive, personalised plans'], price: '₹6,000', faqs: [{ q: 'When should I start anti-aging treatments?', a: 'Prevention is most effective. Many start in their late 20s or 30s with skin boosters and medical skincare.' }, { q: 'Are results natural-looking?', a: "Absolutely. Dr. Shivangi's approach is based on subtle enhancement — refreshed, not altered." }, { q: 'How long do results last?', a: 'Botox: 4–6 months; fillers: 12–18 months; skin boosters: 6–9 months.' }, { q: 'Are treatments safe?', a: 'All treatments offered are FDA-approved and extensively clinically tested.' }] },
+//       'fillers': { bc: 'Dermal Fillers', title: 'Dermal Fillers', sub: 'Restore volume, sculpt contours and enhance features with expert precision.', tag: '✦ Aesthetic Treatment', h2: 'Dermal Fillers —<br><em>Sculpted, Restored</em> Elegance.', p1: "Dermal fillers use hyaluronic acid — a naturally occurring substance in your body — to restore volume, smooth folds, and enhance facial contours. In Dr. Shivangi's hands, fillers are a precise sculptural tool.", p2: "From cheek contouring to jawline definition to under-eye rejuvenation, Dr. Shivangi's filler artistry produces results that are universally noticed but never identified as cosmetic.", benefits: ['Restores youthful facial volume', 'Enhances cheeks, jaw, and chin contour', 'Smooths nasolabial folds naturally', 'Results last 12–18 months', 'Reversible with hyaluronidase'], price: '₹12,000', faqs: [{ q: 'Do fillers hurt?', a: 'Fillers contain lidocaine. Most patients experience minimal discomfort. Numbing cream is applied beforehand.' }, { q: 'How long do fillers last?', a: 'Hyaluronic acid fillers typically last 12–18 months depending on area and metabolism.' }, { q: 'Can fillers be dissolved?', a: 'Yes — hyaluronic acid fillers can be completely dissolved with hyaluronidase enzyme.' }, { q: 'What areas can be treated?', a: 'Cheeks, jawline, chin, lips, under-eyes, temples, and nasolabial folds.' }] },
+//       'laser': { bc: 'Laser Treatments', title: 'Laser Treatments', sub: 'Precision light-based therapy for skin resurfacing, pigmentation and rejuvenation.', tag: '✦ Laser Treatment', h2: 'Laser —<br><em>Light-Powered</em> Transformation.', p1: 'Laser treatments use targeted light energy to address a wide range of skin concerns — pigmentation, acne scars, hair removal, and skin resurfacing. Dr. Shivangi is certified in multiple laser modalities.', p2: "Medical-grade lasers at Dr. Shivangi's clinic include fractional resurfacing, Q-switched Nd:YAG, and diode laser platforms — delivering measurable results safely for Indian skin tones.", benefits: ['Treats pigmentation, scars, and texture', 'Safe laser hair reduction for all skin types', 'Skin resurfacing for visible rejuvenation', 'Carbon laser peel for instant glow', 'USFDA-approved technology'], price: '₹5,000', faqs: [{ q: 'How many sessions are needed?', a: 'Typically 4–6 sessions depending on concern. Hair reduction requires 6–8 sessions.' }, { q: 'Is laser safe for dark skin?', a: 'Yes, with correct laser selection. Dr. Shivangi specialises in laser for Indian skin types.' }, { q: 'What is the downtime?', a: 'Superficial laser facials: zero. Resurfacing treatments: 3–5 days of social downtime.' }, { q: 'Is it painful?', a: 'Most describe it as a warm snapping sensation. Topical anaesthetic is applied for intensive treatments.' }] },
+//       'lip': { bc: 'Lip Enhancement', title: 'Lip Enhancement', sub: 'Natural lip definition, volume and symmetry crafted with artistic precision.', tag: '✦ Aesthetic Treatment', h2: 'Lip Enhancement —<br><em>Natural Fullness,</em> Perfect Symmetry.', p1: 'Lip enhancement at Dr. Shivangi\'s clinic is about artistry and restraint. Using ultra-fine cannulas and hyaluronic acid fillers, Dr. Shivangi creates lips that look naturally defined and proportionate — never overdone.', p2: 'Whether you desire subtle definition, added volume, or improved symmetry, the approach is always guided by your facial anatomy. The result is you — but with lips you\'ve always wanted.', benefits: ['Natural-looking volume and definition', 'Improves lip symmetry and border clarity', 'Russian lip technique available', 'Same-day results with minimal swelling', 'Results last 9–12 months'], price: '₹10,000', faqs: [{ q: 'Will my lips look natural?', a: "Yes — Dr. Shivangi's philosophy prioritises natural results. Overfilled, artificial-looking lips are never the goal." }, { q: 'How long does swelling last?', a: 'Initial swelling resolves within 24–72 hours. Final results are visible after 1–2 weeks.' }, { q: 'Can I eat normally after?', a: 'Avoid very hot drinks for 24 hours, but normal eating is fine immediately.' }, { q: 'How often do I need to repeat?', a: 'Lip fillers typically last 9–12 months. A maintenance touch-up once or twice a year is recommended.' }] },
+//       'hair-regrowth': { bc: 'Hair Regrowth', title: 'Hair Regrowth Therapy', sub: 'Advanced protocols to stimulate and accelerate natural hair growth.', tag: '✦ Hair Treatment', h2: 'Hair Regrowth —<br><em>Revived Density,</em> Renewed Confidence.', p1: 'Hair regrowth therapy combines PRP, mesotherapy, growth factor infusions, and prescription treatments into a personalised protocol designed to maximise hair density and growth speed.', p2: 'Dr. Shivangi analyses your specific type of hair loss and creates a multi-modal plan addressing root causes including hormonal imbalance, nutritional deficiency, and follicular miniaturisation.', benefits: ['Stimulates dormant follicles', 'Increases hair density and coverage', 'Addresses multiple causes of hair loss', 'Combines PRP, mesotherapy, and topicals', 'Visible results within 2–3 months'], price: '₹5,500', faqs: [{ q: 'Is hair regrowth therapy permanent?', a: 'Treatments significantly slow and reverse hair loss. Maintenance sessions sustain long-term results.' }, { q: 'How is it different from PRP alone?', a: 'Combination therapy is more comprehensive — addressing more aspects and delivering faster results.' }, { q: 'Is there pain?', a: 'Topical anaesthetic ensures a comfortable experience.' }, { q: 'Are results guaranteed?', a: 'Most patients see significant improvement. Dr. Shivangi will be honest about expected outcomes during consultation.' }] },
+//       'hair-fall': { bc: 'Hair Fall', title: 'Hair Fall Treatment', sub: 'Diagnose and treat the root cause of excessive hair fall.', tag: '✦ Hair Treatment', h2: 'Hair Fall —<br><em>Diagnosis,</em> Control & Prevention.', p1: 'Hair fall can have many causes — stress, hormones, nutrition, thyroid disorders, or genetic predisposition. Dr. Shivangi takes a thorough diagnostic approach before recommending any treatment.', p2: 'A combination of blood tests, scalp analysis, and medical history review helps identify the exact cause, allowing for a highly targeted and effective treatment protocol.', benefits: ['Comprehensive root-cause diagnosis', 'Targeted treatment for your specific cause', 'Combines medical and aesthetic approaches', 'Scalp health optimisation', 'Prevents further progression'], price: '₹3,500', faqs: [{ q: 'What causes excessive hair fall?', a: 'Common causes: stress, hormonal imbalance, nutritional deficiencies, scalp conditions, and genetics.' }, { q: 'Do I need blood tests?', a: 'Often yes — blood tests help identify treatable causes like thyroid dysfunction or nutritional deficiencies.' }, { q: 'How soon can hair fall be controlled?', a: 'With the right treatment, most patients see significant reduction within 6–8 weeks.' }, { q: 'Can diet affect hair fall?', a: 'Yes — iron, Vitamin D, B12, and protein deficiencies are common contributors. Dietary guidance is provided.' }] },
+//       'scalp-detox': { bc: 'Scalp Detox', title: 'Scalp Detox Treatment', sub: 'Deep cleanse and revitalise your scalp for healthier hair.', tag: '✦ Hair Treatment', h2: 'Scalp Detox —<br><em>Clean Foundation</em> for Healthy Hair.', p1: 'A healthy scalp is the foundation of healthy hair. Scalp detox removes build-up, excess sebum, dead skin cells, and product residue that clog follicles and inhibit healthy hair growth.', p2: "Dr. Shivangi's scalp detox protocol combines medical-grade exfoliants, anti-inflammatory agents, and nourishing treatments to restore the scalp's optimal pH and microbiome balance.", benefits: ['Removes follicle-clogging build-up', 'Reduces scalp oiliness and dandruff', 'Creates optimal environment for hair growth', 'Relaxing, spa-like experience', 'Immediately improves scalp comfort'], price: '₹2,500', faqs: [{ q: 'How often should I get a scalp detox?', a: 'Once every 4–6 weeks for most patients. More frequent for oily scalps.' }, { q: 'Is it suitable for sensitive scalps?', a: 'Yes — Dr. Shivangi selects gentle formulations and adjusts protocol accordingly.' }, { q: 'Can it be combined with PRP?', a: 'Absolutely — scalp detox before PRP enhances absorption and efficacy of growth factors.' }, { q: 'Will hair fall temporarily after treatment?', a: 'Some shedding of loose hair during detox is normal — it\'s a sign the treatment is working.' }] },
+//       'skin-tightening': { bc: 'Skin Tightening', title: 'Skin Tightening', sub: 'Non-surgical lifting and firming for a youthful, contoured appearance.', tag: '✦ Aesthetic Treatment', h2: 'Skin Tightening —<br><em>Non-Surgical Lift,</em> Natural Firmness.', p1: 'Dr. Shivangi offers a range of non-surgical skin tightening technologies including radiofrequency, HIFU, and thread-based treatments for visible lifting and contouring.', p2: 'Results develop progressively as collagen and elastin production is stimulated, with visible lifting effects that continue to improve over 3–6 months post-treatment.', benefits: ['Visibly lifts and tightens loose skin', 'Stimulates long-term collagen production', 'No surgery, no anaesthesia, no scars', 'Results improve progressively over months', 'Suitable for face, neck, and body'], price: '₹8,000', faqs: [{ q: 'What technology is used?', a: 'FDA-cleared radiofrequency and HIFU (High-Intensity Focused Ultrasound) devices.' }, { q: 'How many sessions are needed?', a: 'Many see results from a single session. 2–3 sessions spaced 4–8 weeks apart is optimal.' }, { q: 'Is there any downtime?', a: 'Minimal. Some mild redness or swelling may occur for a few hours.' }, { q: 'How long do results last?', a: 'Results can last 1–2 years. Maintenance sessions help sustain the lifting effect.' }] },
+//       'skin-brightening': { bc: 'Skin Brightening', title: 'Skin Brightening', sub: 'Reveal your most luminous complexion with targeted brightening protocols.', tag: '✦ Skin Treatment', h2: 'Skin Brightening —<br><em>Luminous Glow,</em> Inside Out.', p1: 'Skin brightening addresses the underlying causes of dullness — dead cell accumulation, oxidative stress, poor circulation, and subclinical inflammation.', p2: 'Dr. Shivangi combines medical-grade brightening peels, Vitamin C infusions, glow facials, and personalised skincare to reveal the naturally radiant complexion beneath.', benefits: ['Immediate and cumulative brightening effect', 'Reduces dullness, uneven tone, and grey cast', 'Infuses skin with antioxidants and hydration', 'Safe for all Indian skin tones', 'No downtime required for most protocols'], price: '₹2,500', faqs: [{ q: 'How quickly will I see results?', a: 'Most notice visible brightening immediately after the first session.' }, { q: 'Is it the same as skin lightening?', a: 'No. Brightening enhances your natural glow without altering your skin\'s natural colour.' }, { q: 'What ingredients are used?', a: 'Vitamin C, niacinamide, alpha-arbutin, kojic acid, and antioxidant complexes.' }, { q: 'Can I combine it with other treatments?', a: 'Yes — pairs beautifully with HydraFacial, chemical peels, and laser treatments.' }] }
+//     };
+//  // ═══════════════ FAQ ═══════════════
+// document.addEventListener('click',function(e){
+//   var q=e.target.closest('.faq-q');
+//   if(!q)return;
+//   var item=q.closest('.faq-item');
+//   var open=item.classList.contains('open');
+//   document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+//   if(!open)item.classList.add('open');
+// });
+
+ </script>
+ <script src="assets/script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/script.js"></script>
+ 
 </body>
 
 </html>

@@ -1,298 +1,4 @@
-
-    // ═══════════════ SCROLL ANIMATIONS ═══════════════
-    var revEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
-    function checkReveal() { revEls.forEach(function (el) { var r = el.getBoundingClientRect(); if (r.top < window.innerHeight - 80) el.classList.add('visible') }) }
-    window.addEventListener('scroll', checkReveal, { passive: true });
-    checkReveal();
-
-    // ═══════════════ PARTICLES ═══════════════
-    (function () {
-      var c = document.getElementById('particles');
-      if (!c) return;
-      for (var i = 0; i < 20; i++) {
-        var p = document.createElement('div');
-        p.className = 'hero-particle';
-        p.style.left = Math.random() * 100 + '%';
-        p.style.bottom = Math.random() * 40 + '%';
-        p.style.animationDuration = (6 + Math.random() * 8) + 's';
-        p.style.animationDelay = (Math.random() * 6) + 's';
-        p.style.width = p.style.height = (1 + Math.random() * 2) + 'px';
-        c.appendChild(p);
-      }
-    })();
-
-    // ═══════════════ NAVBAR ═══════════════
-    var currentPage = 'home';
-    window.addEventListener('scroll', function () {
-      var nb = document.getElementById('navbar');
-      if (currentPage === 'home' && window.scrollY < 60) nb.classList.remove('scrolled');
-      else nb.classList.add('scrolled');
-    }, { passive: true });
-
-    // ═══════════════ PAGES ═══════════════
-    function showPage(id) {
-      document.querySelectorAll('.page').forEach(function (p) { p.classList.remove('active') });
-      var pg = document.getElementById('page-' + id);
-      if (!pg) return;
-      pg.classList.add('active');
-      currentPage = id;
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      var nb = document.getElementById('navbar');
-      if (id === 'home' && window.scrollY < 60) nb.classList.remove('scrolled');
-      else nb.classList.add('scrolled');
-      setTimeout(checkReveal, 100);
-      closeMob();
-    }
-
-    // ═══════════════ MOBILE MENU ═══════════════
-    function toggleMob() {
-      var m = document.getElementById('mobMenu');
-      var h = document.getElementById('ham');
-      m.classList.toggle('open');
-      h.classList.toggle('open');
-      document.body.style.overflow = m.classList.contains('open') ? 'hidden' : '';
-    }
-    function closeMob() {
-      document.getElementById('mobMenu').classList.remove('open');
-      document.getElementById('ham').classList.remove('open');
-      document.body.style.overflow = '';
-    }
-    function toggleMobSub(id) {
-      var el = document.getElementById(id);
-      el.classList.toggle('open');
-    }
-
-    // ═══════════════ MODAL ═══════════════
-    function openModal() { document.getElementById('modal').classList.add('open'); document.body.style.overflow = 'hidden' }
-    function closeModal() { document.getElementById('modal').classList.remove('open'); document.body.style.overflow = '' }
-    document.getElementById('modal').addEventListener('click', function (e) { if (e.target === this) closeModal() });
-
-    // ═══════════════ TOAST ═══════════════
-    function showToast(msg) {
-      var t = document.getElementById('toast');
-      document.getElementById('toast-msg').textContent = msg;
-      t.style.display = 'block';
-      setTimeout(function () { t.style.display = 'none' }, 3800);
-    }
-
-    // ═══════════════ FORMS ═══════════════
-    function submitHeroForm() {
-      if (!document.getElementById('hf-name').value || !document.getElementById('hf-phone').value || !document.getElementById('hf-service').value) { showToast('Please fill all required fields.'); return }
-      var name = document.getElementById('hf-name').value;
-      var phone = document.getElementById('hf-phone').value;
-      var svc = document.getElementById('hf-service').value;
-      // WhatsApp redirect with pre-filled message
-      var msg = 'Hi Dr. Shivangi! I would like to book an appointment.%0AName: ' + encodeURIComponent(name) + '%0APhone: ' + encodeURIComponent(phone) + '%0ATreatment: ' + encodeURIComponent(svc);
-      window.open('https://wa.me/919800000000?text=' + msg, '_blank');
-      showToast('Redirecting to WhatsApp booking...');
-    }
-    function submitBookingForm() {
-      if (!document.getElementById('bf-name').value || !document.getElementById('bf-phone').value) { showToast('Please fill required fields.'); return }
-      var name = document.getElementById('bf-name').value;
-      var phone = document.getElementById('bf-phone').value;
-      var svc = document.getElementById('bf-service').value;
-      var msg = 'Hi Dr. Shivangi! I would like to book a consultation.%0AName: ' + encodeURIComponent(name) + '%0APhone: ' + encodeURIComponent(phone) + '%0ATreatment: ' + encodeURIComponent(svc);
-      window.open('https://wa.me/919800000000?text=' + msg, '_blank');
-      showToast('Booking sent! We\'ll confirm shortly.');
-    }
-    function submitModal() {
-      if (!document.getElementById('m-name').value || !document.getElementById('m-phone').value) { showToast('Please fill required fields.'); return }
-      var name = document.getElementById('m-name').value;
-      var phone = document.getElementById('m-phone').value;
-      var svc = document.getElementById('m-svc').value;
-      var date = document.getElementById('m-date').value;
-      var time = document.getElementById('m-time').value;
-      var msg = 'Hi Dr. Shivangi! I would like to book a consultation.%0AName: ' + encodeURIComponent(name) + '%0APhone: ' + encodeURIComponent(phone) + '%0ATreatment: ' + encodeURIComponent(svc) + '%0ADate: ' + encodeURIComponent(date) + '%0ATime: ' + encodeURIComponent(time);
-      closeModal();
-      window.open('https://wa.me/919800000000?text=' + msg, '_blank');
-      showToast('Booking confirmed! Opening WhatsApp...');
-    }
-    function submitContactForm() {
-      if (!document.getElementById('cf-fn').value || !document.getElementById('cf-phone').value) { showToast('Please fill required fields.'); return }
-      var name = document.getElementById('cf-fn').value + ' ' + document.getElementById('cf-ln').value;
-      var phone = document.getElementById('cf-phone').value;
-      var svc = document.getElementById('cf-svc').value;
-      var msg = document.getElementById('cf-msg').value;
-      var waMsg = 'Hi Dr. Shivangi!%0AName: ' + encodeURIComponent(name) + '%0APhone: ' + encodeURIComponent(phone) + '%0ATreatment: ' + encodeURIComponent(svc) + '%0AMessage: ' + encodeURIComponent(msg);
-      window.open('https://wa.me/919800000000?text=' + waMsg, '_blank');
-      showToast('Message sent! Opening WhatsApp...');
-    }
-
-    /* =========================
-   BEFORE AFTER DATA
-========================= */
-
-const baImages = {
-
-  "Skin Glow": {
-    before : "assets/images/before-1.png",
-    after  : "assets/images/after-1.jpg"
-  },
-
-  "Hair Growth": {
-    before : "assets/images/hair-before.png",
-    after  : "assets/images/hair-after.png"
-  },
-
-  "Anti-Aging": {
-    before : "assets/images/anti-before.jpg",
-    after  : "assets/images/anti-after.jpg"
-  },
-
-  "Pigmentation": {
-    before : "assets/images/pigment-before.jpg",
-    after  : "assets/images/pigment-after.jpg"
-  }
-
-};
-
-
-/* ELEMENTS */
-const wrap   = document.getElementById('baWrap');
-const line   = document.getElementById('baDivLine');
-const knob   = document.getElementById('baKnob');
-const before = document.getElementById('baBefore');
-const after  = document.getElementById('baAfter');
-
-/* IMAGES */
-const beforeImg = before.querySelector('img');
-const afterImg  = after.querySelector('img');
-
-
-/* =========================
-   SLIDER
-========================= */
-
-let dragging = false;
-
-function setPos(x){
-
-  const r = wrap.getBoundingClientRect();
-
-  let p = ((x - r.left) / r.width) * 100;
-
-  p = Math.max(10, Math.min(90, p));
-
-  line.style.left = p + '%';
-
-  knob.style.left = p + '%';
-
-  before.style.width = p + '%';
-
-  after.style.left = p + '%';
-
-  after.style.width = (100 - p) + '%';
-}
-
-/* MOUSE */
-wrap.addEventListener('mousedown', function(e){
-
-  dragging = true;
-
-  setPos(e.clientX);
-});
-
-document.addEventListener('mousemove', function(e){
-
-  if(dragging){
-
-    setPos(e.clientX);
-  }
-});
-
-document.addEventListener('mouseup', function(){
-
-  dragging = false;
-});
-
-
-/* TOUCH */
-wrap.addEventListener('touchstart', function(e){
-
-  dragging = true;
-
-  setPos(e.touches[0].clientX);
-
-}, { passive:true });
-
-document.addEventListener('touchmove', function(e){
-
-  if(dragging){
-
-    setPos(e.touches[0].clientX);
-  }
-
-}, { passive:true });
-
-document.addEventListener('touchend', function(){
-
-  dragging = false;
-});
-
-
-/* =========================
-   TAB CHANGE
-========================= */
-
-function setBATab(el){
-
-  /* ACTIVE BUTTON */
-  document.querySelectorAll('.ba-tab').forEach(function(t){
-
-    t.classList.remove('active');
-
-  });
-
-  el.classList.add('active');
-
-
-  /* TAB NAME */
-  const tabName = el.innerText.trim();
-
-
-  /* CHANGE IMAGES */
-  beforeImg.src = baImages[tabName].before;
-
-  afterImg.src = baImages[tabName].after;
-
-
-  /* RESET SLIDER POSITION */
-  line.style.left = '50%';
-
-  knob.style.left = '50%';
-
-  before.style.width = '50%';
-
-  after.style.left = '50%';
-
-  after.style.width = '50%';
-}
-    // ═══════════════ SCROLL TO TREATMENTS ═══════════════
-    function scrollToTreatments() {
-      var el = document.getElementById('treatments-anchor');
-      if (el) el.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // ═══════════════ GALLERY FILTER ═══════════════
-    function filterG(btn, cat) {
-      document.querySelectorAll('.gf-btn').forEach(function (b) { b.classList.remove('active') });
-      btn.classList.add('active');
-      document.querySelectorAll('.gp-item').forEach(function (el) {
-        el.style.display = (cat === 'all' || el.dataset.cat === cat) ? 'flex' : 'none';
-      });
-    }
-
-    // ═══════════════ FAQ ═══════════════
-    document.addEventListener('click', function (e) {
-      var q = e.target.closest('.faq-q');
-      if (!q) return;
-      var item = q.closest('.faq-item');
-      var open = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(function (i) { i.classList.remove('open') });
-      if (!open) item.classList.add('open');
-    });
-
-    // ═══════════════ TREATMENT DATA ═══════════════
+        // ═══════════════ TREATMENT DATA ═══════════════
     var T = {
       'hydrafacial': { bc: 'HydraFacial', title: 'HydraFacial', sub: 'Deep cleanse, extract, and hydrate for an instant luminous glow.', tag: '✦ Skin Treatment', h2: 'HydraFacial —<br>The <em>Signature Glow</em> Treatment.', p1: 'HydraFacial is a multi-step medical-grade facial that combines cleansing, exfoliation, extraction, hydration, and antioxidant protection simultaneously. It uses a patented vortex-fusion delivery system for immediate, visible results.', p2: 'Dr. Shivangi customises each session to your specific skin concerns — dullness, congested pores, fine lines, or uneven texture. Result: radiant, glass-skin glow after the very first session.', benefits: ['Deep pore cleansing without discomfort', 'Instant hydration with hyaluronic acid', 'Reduces fine lines and improves texture', 'Safe for all skin types including sensitive', 'Zero downtime — perfect before events'], price: '₹3,500', faqs: [{ q: 'How long does a session take?', a: 'A standard session takes 30–45 minutes. Dr. Shivangi may extend this with personalised add-ons.' }, { q: 'How many sessions do I need?', a: 'Many see results after one session. For lasting improvement, a course of 4–6 monthly sessions is recommended.' }, { q: 'Is there any downtime?', a: 'None at all. You can resume normal activities and wear makeup immediately after.' }, { q: 'What concerns does it address?', a: 'Dullness, enlarged pores, oily skin, congestion, fine lines, dehydration, and uneven skin tone.' }] },
       'botox': { bc: 'Botox', title: 'Botox', sub: 'Smooth fine lines and restore youthful freshness with precision injectables.', tag: '✦ Aesthetic Treatment', h2: 'Botox —<br>Precision <em>Anti-Aging</em> Artistry.', p1: 'Botox is one of the most studied, safe, and effective treatments in aesthetic medicine. Dr. Shivangi uses micro-dosing techniques to relax targeted facial muscles — smoothing expression lines while preserving your natural expressions.', p2: "The goal is never a frozen or unnatural appearance. Dr. Shivangi's philosophy is refreshed, not retouched — results that make you look well-rested and naturally radiant.", benefits: ['Smooths forehead lines, frown lines & crow\'s feet', 'Preserves natural facial expressions', 'Results visible in 3–7 days', 'Lasts 4–6 months', 'No downtime required'], price: '₹8,000', faqs: [{ q: 'Does Botox hurt?', a: 'Most describe it as a minor pinch. Ultra-fine needles and topical numbing ensure maximum comfort.' }, { q: 'How long do results last?', a: 'Typically 4–6 months. With regular treatment, many patients need less product over time.' }, { q: 'What\'s the recovery like?', a: 'Minimal to none. Mild redness or swelling at injection sites resolves within hours.' }, { q: 'Can I combine Botox with fillers?', a: 'Yes — a combination approach often delivers the most balanced, natural result.' }] },
@@ -310,44 +16,543 @@ function setBATab(el){
       'skin-tightening': { bc: 'Skin Tightening', title: 'Skin Tightening', sub: 'Non-surgical lifting and firming for a youthful, contoured appearance.', tag: '✦ Aesthetic Treatment', h2: 'Skin Tightening —<br><em>Non-Surgical Lift,</em> Natural Firmness.', p1: 'Dr. Shivangi offers a range of non-surgical skin tightening technologies including radiofrequency, HIFU, and thread-based treatments for visible lifting and contouring.', p2: 'Results develop progressively as collagen and elastin production is stimulated, with visible lifting effects that continue to improve over 3–6 months post-treatment.', benefits: ['Visibly lifts and tightens loose skin', 'Stimulates long-term collagen production', 'No surgery, no anaesthesia, no scars', 'Results improve progressively over months', 'Suitable for face, neck, and body'], price: '₹8,000', faqs: [{ q: 'What technology is used?', a: 'FDA-cleared radiofrequency and HIFU (High-Intensity Focused Ultrasound) devices.' }, { q: 'How many sessions are needed?', a: 'Many see results from a single session. 2–3 sessions spaced 4–8 weeks apart is optimal.' }, { q: 'Is there any downtime?', a: 'Minimal. Some mild redness or swelling may occur for a few hours.' }, { q: 'How long do results last?', a: 'Results can last 1–2 years. Maintenance sessions help sustain the lifting effect.' }] },
       'skin-brightening': { bc: 'Skin Brightening', title: 'Skin Brightening', sub: 'Reveal your most luminous complexion with targeted brightening protocols.', tag: '✦ Skin Treatment', h2: 'Skin Brightening —<br><em>Luminous Glow,</em> Inside Out.', p1: 'Skin brightening addresses the underlying causes of dullness — dead cell accumulation, oxidative stress, poor circulation, and subclinical inflammation.', p2: 'Dr. Shivangi combines medical-grade brightening peels, Vitamin C infusions, glow facials, and personalised skincare to reveal the naturally radiant complexion beneath.', benefits: ['Immediate and cumulative brightening effect', 'Reduces dullness, uneven tone, and grey cast', 'Infuses skin with antioxidants and hydration', 'Safe for all Indian skin tones', 'No downtime required for most protocols'], price: '₹2,500', faqs: [{ q: 'How quickly will I see results?', a: 'Most notice visible brightening immediately after the first session.' }, { q: 'Is it the same as skin lightening?', a: 'No. Brightening enhances your natural glow without altering your skin\'s natural colour.' }, { q: 'What ingredients are used?', a: 'Vitamin C, niacinamide, alpha-arbutin, kojic acid, and antioxidant complexes.' }, { q: 'Can I combine it with other treatments?', a: 'Yes — pairs beautifully with HydraFacial, chemical peels, and laser treatments.' }] }
     };
+ // ═══════════════ FAQ ═══════════════
+document.addEventListener('click',function(e){
+  var q=e.target.closest('.faq-q');
+  if(!q)return;
+  var item=q.closest('.faq-item');
+  var open=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open')});
+  if(!open)item.classList.add('open');
+});
 
-    function showTreatment(key) {
-      var t = T[key]; if (!t) { showPage('home'); return }
-      document.getElementById('t-bc').textContent = t.bc;
-      document.getElementById('t-hero-title').innerHTML = t.title;
-      document.getElementById('t-hero-sub').textContent = t.sub;
-      document.getElementById('t-tag').textContent = t.tag;
-      document.getElementById('t-h2').innerHTML = t.h2;
-      document.getElementById('t-p1').textContent = t.p1;
-      document.getElementById('t-p2').textContent = t.p2;
-      document.getElementById('t-price').textContent = t.price;
-      var bl = document.getElementById('t-benefits'); bl.innerHTML = '';
-      t.benefits.forEach(function (b) { var li = document.createElement('li'); li.textContent = b; bl.appendChild(li) });
-      var fl = document.getElementById('t-faqs'); fl.innerHTML = '';
-      t.faqs.forEach(function (f) { fl.innerHTML += '<div class="faq-item"><div class="faq-q">' + f.q + '<span class="faq-icon">+</span></div><div class="faq-a">' + f.a + '</div></div>' });
-      showPage('treatment');
+
+
+// ═══════════════ SCROLL ANIMATIONS ═══════════════
+var revEls = document.querySelectorAll(".reveal,.reveal-left,.reveal-right");
+function checkReveal() {
+  revEls.forEach(function (el) {
+    var r = el.getBoundingClientRect();
+    if (r.top < window.innerHeight - 80) el.classList.add("visible");
+  });
+}
+window.addEventListener("scroll", checkReveal, { passive: true });
+checkReveal();
+
+// ═══════════════ PARTICLES ═══════════════
+(function () {
+  var c = document.getElementById("particles");
+  if (!c) return;
+  for (var i = 0; i < 20; i++) {
+    var p = document.createElement("div");
+    p.className = "hero-particle";
+    p.style.left = Math.random() * 100 + "%";
+    p.style.bottom = Math.random() * 40 + "%";
+    p.style.animationDuration = 6 + Math.random() * 8 + "s";
+    p.style.animationDelay = Math.random() * 6 + "s";
+    p.style.width = p.style.height = 1 + Math.random() * 2 + "px";
+    c.appendChild(p);
+  }
+})();
+
+// ═══════════════ NAVBAR ═══════════════
+var currentPage = "home";
+window.addEventListener(
+  "scroll",
+  function () {
+    var nb = document.getElementById("navbar");
+    if (currentPage === "home" && window.scrollY < 60)
+      nb.classList.remove("scrolled");
+    else nb.classList.add("scrolled");
+  },
+  { passive: true },
+);
+
+// ═══════════════ PAGES ═══════════════
+function showPage(id) {
+  document.querySelectorAll(".page").forEach(function (p) {
+    p.classList.remove("active");
+  });
+  var pg = document.getElementById("page-" + id);
+  if (!pg) return;
+  pg.classList.add("active");
+  currentPage = id;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  var nb = document.getElementById("navbar");
+  if (id === "home" && window.scrollY < 60) nb.classList.remove("scrolled");
+  else nb.classList.add("scrolled");
+  setTimeout(checkReveal, 100);
+  closeMob();
+}
+
+// ═══════════════ MOBILE MENU ═══════════════
+function toggleMob() {
+  var m = document.getElementById("mobMenu");
+  var h = document.getElementById("ham");
+  m.classList.toggle("open");
+  h.classList.toggle("open");
+  document.body.style.overflow = m.classList.contains("open") ? "hidden" : "";
+}
+function closeMob() {
+  document.getElementById("mobMenu").classList.remove("open");
+  document.getElementById("ham").classList.remove("open");
+  document.body.style.overflow = "";
+}
+function toggleMobSub(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle("open");
+}
+
+// ═══════════════ MODAL ═══════════════
+function openModal() {
+  document.getElementById("modal").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeModal() {
+  document.getElementById("modal").classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.getElementById("modal").addEventListener("click", function (e) {
+  if (e.target === this) closeModal();
+});
+
+// ═══════════════ TOAST ═══════════════
+function showToast(msg) {
+  var t = document.getElementById("toast");
+  document.getElementById("toast-msg").textContent = msg;
+  t.style.display = "block";
+  setTimeout(function () {
+    t.style.display = "none";
+  }, 3800);
+}
+
+// ═══════════════ FORMS ═══════════════
+function submitHeroForm() {
+  if (
+    !document.getElementById("hf-name").value ||
+    !document.getElementById("hf-phone").value ||
+    !document.getElementById("hf-service").value
+  ) {
+    showToast("Please fill all required fields.");
+    return;
+  }
+  var name = document.getElementById("hf-name").value;
+  var phone = document.getElementById("hf-phone").value;
+  var svc = document.getElementById("hf-service").value;
+  // WhatsApp redirect with pre-filled message
+  var msg =
+    "Hi Dr. Shivangi! I would like to book an appointment.%0AName: " +
+    encodeURIComponent(name) +
+    "%0APhone: " +
+    encodeURIComponent(phone) +
+    "%0ATreatment: " +
+    encodeURIComponent(svc);
+  window.open("https://wa.me/919800000000?text=" + msg, "_blank");
+  showToast("Redirecting to WhatsApp booking...");
+}
+function submitBookingForm() {
+  if (
+    !document.getElementById("bf-name").value ||
+    !document.getElementById("bf-phone").value
+  ) {
+    showToast("Please fill required fields.");
+    return;
+  }
+  var name = document.getElementById("bf-name").value;
+  var phone = document.getElementById("bf-phone").value;
+  var svc = document.getElementById("bf-service").value;
+  var msg =
+    "Hi Dr. Shivangi! I would like to book a consultation.%0AName: " +
+    encodeURIComponent(name) +
+    "%0APhone: " +
+    encodeURIComponent(phone) +
+    "%0ATreatment: " +
+    encodeURIComponent(svc);
+  window.open("https://wa.me/919800000000?text=" + msg, "_blank");
+  showToast("Booking sent! We'll confirm shortly.");
+}
+function submitModal() {
+  if (
+    !document.getElementById("m-name").value ||
+    !document.getElementById("m-phone").value
+  ) {
+    showToast("Please fill required fields.");
+    return;
+  }
+  var name = document.getElementById("m-name").value;
+  var phone = document.getElementById("m-phone").value;
+  var svc = document.getElementById("m-svc").value;
+  var date = document.getElementById("m-date").value;
+  var time = document.getElementById("m-time").value;
+  var msg =
+    "Hi Dr. Shivangi! I would like to book a consultation.%0AName: " +
+    encodeURIComponent(name) +
+    "%0APhone: " +
+    encodeURIComponent(phone) +
+    "%0ATreatment: " +
+    encodeURIComponent(svc) +
+    "%0ADate: " +
+    encodeURIComponent(date) +
+    "%0ATime: " +
+    encodeURIComponent(time);
+  closeModal();
+  window.open("https://wa.me/919800000000?text=" + msg, "_blank");
+  showToast("Booking confirmed! Opening WhatsApp...");
+}
+function submitContactForm() {
+  if (
+    !document.getElementById("cf-fn").value ||
+    !document.getElementById("cf-phone").value
+  ) {
+    showToast("Please fill required fields.");
+    return;
+  }
+  var name =
+    document.getElementById("cf-fn").value +
+    " " +
+    document.getElementById("cf-ln").value;
+  var phone = document.getElementById("cf-phone").value;
+  var svc = document.getElementById("cf-svc").value;
+  var msg = document.getElementById("cf-msg").value;
+  var waMsg =
+    "Hi Dr. Shivangi!%0AName: " +
+    encodeURIComponent(name) +
+    "%0APhone: " +
+    encodeURIComponent(phone) +
+    "%0ATreatment: " +
+    encodeURIComponent(svc) +
+    "%0AMessage: " +
+    encodeURIComponent(msg);
+  window.open("https://wa.me/919800000000?text=" + waMsg, "_blank");
+  showToast("Message sent! Opening WhatsApp...");
+}
+
+/* =========================
+   BEFORE AFTER DATA
+========================= */
+
+const baImages = {
+  "Skin Glow": {
+    before: "assets/images/before-1.png",
+    after: "assets/images/after-1.jpg",
+  },
+
+  "Hair Growth": {
+    before: "assets/images/hair-before.png",
+    after: "assets/images/hair-after.png",
+  },
+
+  "Anti-Aging": {
+    before: "assets/images/anti-before.jpg",
+    after: "assets/images/anti-after.jpg",
+  },
+
+  Pigmentation: {
+    before: "assets/images/pigment-before.jpg",
+    after: "assets/images/pigment-after.jpg",
+  },
+};
+
+/* ELEMENTS */
+const wrap = document.getElementById("baWrap");
+const line = document.getElementById("baDivLine");
+const knob = document.getElementById("baKnob");
+const before = document.getElementById("baBefore");
+const after = document.getElementById("baAfter");
+
+/* IMAGES */
+const beforeImg = before.querySelector("img");
+const afterImg = after.querySelector("img");
+
+/* =========================
+   SLIDER
+========================= */
+
+let dragging = false;
+
+function setPos(x) {
+  const r = wrap.getBoundingClientRect();
+
+  let p = ((x - r.left) / r.width) * 100;
+
+  p = Math.max(10, Math.min(90, p));
+
+  line.style.left = p + "%";
+
+  knob.style.left = p + "%";
+
+  before.style.width = p + "%";
+
+  after.style.left = p + "%";
+
+  after.style.width = 100 - p + "%";
+}
+
+/* MOUSE */
+wrap.addEventListener("mousedown", function (e) {
+  dragging = true;
+
+  setPos(e.clientX);
+});
+
+document.addEventListener("mousemove", function (e) {
+  if (dragging) {
+    setPos(e.clientX);
+  }
+});
+
+document.addEventListener("mouseup", function () {
+  dragging = false;
+});
+
+/* TOUCH */
+wrap.addEventListener(
+  "touchstart",
+  function (e) {
+    dragging = true;
+
+    setPos(e.touches[0].clientX);
+  },
+  { passive: true },
+);
+
+document.addEventListener(
+  "touchmove",
+  function (e) {
+    if (dragging) {
+      setPos(e.touches[0].clientX);
     }
+  },
+  { passive: true },
+);
 
-    // ═══════════════ BLOG ARTICLES ═══════════════
-    var articles = {
-      'botox-science': { bc: 'Botox Science', title: 'The Science Behind Botox', meta: 'By Dr. Shivangi · May 2025 · 5 min read', cat: 'Anti-Aging', body: '<h2>What Is Botox, Really?</h2><p>Botox — short for botulinum toxin type A — is a highly purified neurotoxic protein produced by Clostridium botulinum. While the word "toxin" might sound alarming, in the microscopic doses used in aesthetic medicine, it is extraordinarily safe and has been used clinically for over 30 years.</p><h2>How Does It Work?</h2><p>When injected into a muscle, Botox blocks the release of acetylcholine — the neurotransmitter that signals muscles to contract. Without this signal, the targeted muscle relaxes, causing the overlying skin to smooth out.</p><p>The key is precision. Dr. Shivangi targets only the muscles responsible for expression lines — forehead lines, frown lines (glabella), and crow\'s feet — while leaving surrounding muscles completely unaffected.</p><h2>The Artistry of Micro-Dosing</h2><p>The difference between natural-looking Botox and the "frozen face" look lies entirely in technique and dosing. Dr. Shivangi uses micro-dosing — injecting smaller amounts at multiple precise points — which preserves natural movement while softening lines.</p><h3>What to Expect After Treatment</h3><ul><li>Results begin appearing within 3–5 days</li><li>Full effect visible at 10–14 days</li><li>Results last 4–6 months on average</li><li>Minimal to no downtime</li></ul><h2>Is Botox Safe?</h2><p>When administered by a qualified medical professional using FDA-approved products, Botox has an excellent safety record. Dr. Shivangi uses only pharmaceutical-grade Botox and follows strict injection protocols.</p><p>The most common side effects are mild redness or slight bruising at the injection site, which typically resolve within a few hours to a day.</p>' },
-      'prp-vs-minoxidil': { bc: 'PRP vs Minoxidil', title: 'PRP vs. Minoxidil for Hair Loss', meta: 'By Dr. Shivangi · April 2025 · 6 min read', cat: 'Hair Care', body: '<h2>The Hair Loss Dilemma</h2><p>When hair starts to thin, the first question most people ask is: what actually works? Today, two treatments dominate the conversation — PRP therapy and Minoxidil. Both have clinical evidence behind them, but they work in fundamentally different ways.</p><h2>What is Minoxidil?</h2><p>Minoxidil is a topical (and now oral) medication originally developed as a blood pressure drug. It was noticed to cause hair growth as a side effect, and has since become one of the most widely used hair loss treatments globally.</p><p>It works by extending the hair growth phase (anagen) and increasing blood flow to follicles. It must be applied daily and indefinitely — stopping treatment typically reverses gains within months.</p><h2>What is PRP Therapy?</h2><p>Platelet-Rich Plasma therapy uses your own blood\'s growth factors to directly stimulate hair follicles. Blood is drawn, centrifuged to concentrate the platelets, and injected into the scalp at follicular level.</p><p>PRP contains multiple growth factors including VEGF, PDGF, and IGF-1 that directly activate dormant follicles and extend the growth cycle.</p><h3>The Comparison</h3><ul><li><strong>Minoxidil:</strong> Daily application, lifelong commitment, modest results, good for maintenance</li><li><strong>PRP:</strong> In-clinic sessions every 4–6 weeks initially, uses your own biology, stronger density improvement, more durable results with maintenance</li></ul><h2>Dr. Shivangi\'s Recommendation</h2><p>For most patients, a combination approach delivers the best results: PRP for follicle activation and density improvement, with topical treatments for maintenance. The right protocol depends entirely on your type and stage of hair loss, which is why a consultation is essential.</p>' },
-      'spf-guide': { bc: 'SPF Guide', title: 'SPF 50 vs SPF 30: The Truth', meta: 'By Dr. Shivangi · April 2025 · 4 min read', cat: 'Skincare', body: '<h2>The SPF Confusion</h2><p>Walk into any pharmacy and you\'ll find sunscreens ranging from SPF 15 to SPF 100+. The marketing suggests that higher is always better. But what does the science actually say?</p><h2>What Does SPF Actually Mean?</h2><p>SPF stands for Sun Protection Factor. SPF 30 blocks approximately 97% of UVB rays. SPF 50 blocks approximately 98%. SPF 100 blocks approximately 99%. The difference between SPF 30 and SPF 50 is just 1% — but that 1% matters, especially if you have pigmentation-prone skin.</p><h2>What Dr. Shivangi Actually Uses</h2><p>As an aesthetic physician who performs skin resurfacing and pigmentation treatments, daily SPF 50 PA+++ is non-negotiable in Dr. Shivangi\'s routine. The PA+++ rating indicates high UVA protection — which is responsible for pigmentation, premature ageing, and DNA damage.</p><h3>Key Recommendations</h3><ul><li>Use SPF 50 PA+++ daily, even indoors (UV penetrates glass)</li><li>Reapply every 2 hours when outdoors</li><li>Apply 2 finger lengths of sunscreen for face and neck</li><li>Use broad-spectrum formulas that cover both UVA and UVB</li><li>For Indian skin, mineral sunscreens (zinc oxide, titanium dioxide) are less likely to cause breakouts</li></ul><h2>The Bottom Line</h2><p>For everyday use, SPF 50 PA+++ broad-spectrum is the gold standard recommended by Dr. Shivangi. It\'s the single most effective anti-aging and anti-pigmentation product you can use — and it costs under ₹500.</p>' },
-      'natural-fillers': { bc: 'Natural Fillers', title: 'The Art of Natural Fillers', meta: 'By Dr. Shivangi · March 2025 · 5 min read', cat: 'Aesthetic', body: '<h2>The Era of "Too Much" Is Over</h2><p>For a decade, overfilled lips, pillow cheeks, and stretched faces dominated aesthetic medicine. Today\'s patients — and today\'s best practitioners — have moved firmly in the opposite direction.</p><h2>What Makes Fillers Look Unnatural?</h2><p>Overfilling is the most common culprit. When too much product is placed in one area, it distorts natural facial proportions. The face has ideal volumetric ratios — when these are disrupted, it looks "done."</p><p>The second factor is placement. Fillers placed in the wrong plane (too superficial, or in the wrong anatomical layer) create lumps, distortion, or an unnatural heaviness.</p><h2>The Modern Philosophy: Addition by Subtraction</h2><p>Dr. Shivangi\'s approach to fillers is guided by a simple principle: what is the minimum intervention that delivers the maximum natural improvement? Sometimes a single 0.5ml of product placed precisely delivers more impact than 2ml placed carelessly.</p><h3>The Technical Principles</h3><ul><li>Always assess the face as a whole, not individual features</li><li>Restore what was lost — don\'t add what was never there</li><li>Work with natural anatomy, never against it</li><li>Less product, more sessions — allows for gradual, refined results</li><li>Respect the "danger zones" — areas requiring ultra-precise technique</li></ul><h2>The Result Nobody Can Quite Identify</h2><p>The highest compliment a filler patient can receive is: "You look amazing — have you been on holiday?" Not: "Have you had something done?" That is the art of natural aesthetics — visible improvement, invisible intervention.</p>' },
-      'indian-skin-pigmentation': { bc: 'Indian Skin', title: 'Pigmentation in Indian Skin', meta: 'By Dr. Shivangi · February 2025 · 5 min read', cat: 'Pigmentation', body: '<h2>Why Indian Skin is Different</h2><p>Indian and South Asian skin (Fitzpatrick Types III–V) has a higher melanin content than lighter skin types. Melanin is the pigment that gives skin its colour — and it\'s the same pigment responsible for dark spots, melasma, and post-inflammatory hyperpigmentation (PIH).</p><h2>The Risk of Generic Protocols</h2><p>Treatments designed for Caucasian skin — particularly aggressive chemical peels and certain laser wavelengths — can cause severe post-inflammatory hyperpigmentation in darker skin tones. This is why it\'s critical to see a physician who has specific expertise in treating melanin-rich skin.</p><h2>What Causes Pigmentation in Indian Skin?</h2><ul><li><strong>Melasma:</strong> Hormonally triggered, worsened by UV and heat. Extremely common in Indian women.</li><li><strong>Post-Inflammatory Hyperpigmentation (PIH):</strong> Dark marks left behind by acne, rashes, or injury.</li><li><strong>Sun Damage:</strong> UV exposure triggers excess melanin production.</li><li><strong>Periorbital Hyperpigmentation:</strong> Dark circles under the eyes — genetic, lifestyle, or vascular.</li></ul><h2>The Right Treatment Approach</h2><p>Dr. Shivangi uses a carefully calibrated combination of low-strength chemical peels (mandelic, kojic, lactic acid), Q-switched Nd:YAG laser (the gold standard for Indian skin), and prescribed brightening skincare to safely and progressively clear pigmentation.</p><p>The key word is progressive. Rushing pigmentation treatment in dark skin almost always causes rebound. Slow, consistent, medically guided treatment delivers lasting results without risk.</p>' },
-      'hydrafacial-vs-facial': { bc: 'HydraFacial vs Facial', title: 'HydraFacial vs Traditional Facial', meta: 'By Dr. Shivangi · February 2025 · 4 min read', cat: 'Skin Care', body: '<h2>The Classic Spa Facial</h2><p>A traditional facial typically involves cleansing, steam, manual extraction, a mask, and moisturiser. Done well, it leaves skin feeling refreshed. But the results are largely superficial and temporary — typically lasting a few days to a week.</p><h2>What Makes HydraFacial Different?</h2><p>HydraFacial is a medical-grade treatment that uses patented Vortex-Fusion technology to simultaneously cleanse, exfoliate, extract, and infuse the skin with targeted serums. The process is controlled, measurable, and reproducible.</p><h3>The Four Step Difference</h3><ul><li><strong>Step 1 — Cleanse & Peel:</strong> Gentle resurfacing removes dead skin cells</li><li><strong>Step 2 — Extract & Hydrate:</strong> Painless suction removes blackheads and congestion while delivering hyaluronic acid</li><li><strong>Step 3 — Fuse & Protect:</strong> Antioxidants, peptides, and growth factors are infused</li><li><strong>Step 4 — Targeted Boosters:</strong> Customised serums for your specific skin concern</li></ul><h2>Is the Price Worth It?</h2><p>A HydraFacial costs 3–5x more than a standard facial. The results, however, are measurably different: immediate pore reduction, improved hydration levels, and visible glow that lasts 4–6 weeks rather than 4–6 days.</p><p>For patients with specific skin concerns — congestion, pigmentation, fine lines, or dehydration — a course of HydraFacials delivers clinical-level improvement without any downtime. For most patients, Dr. Shivangi\'s answer is: yes, the price difference is absolutely worth it.</p>' }
-    };
+document.addEventListener("touchend", function () {
+  dragging = false;
+});
 
-    function showBlogArticle(key) {
-      var a = articles[key]; if (!a) return;
-      document.getElementById('art-bc').textContent = a.bc;
-      document.getElementById('art-title').textContent = a.title;
-      document.getElementById('art-meta').textContent = a.meta;
-      document.getElementById('art-cat').textContent = a.cat;
-      document.getElementById('art-body').innerHTML = a.body;
-      showPage('blog-article');
-    }
-  
+/* =========================
+   TAB CHANGE
+========================= */
+
+function setBATab(el) {
+  /* ACTIVE BUTTON */
+  document.querySelectorAll(".ba-tab").forEach(function (t) {
+    t.classList.remove("active");
+  });
+
+  el.classList.add("active");
+
+  /* TAB NAME */
+  const tabName = el.innerText.trim();
+
+  /* CHANGE IMAGES */
+  beforeImg.src = baImages[tabName].before;
+
+  afterImg.src = baImages[tabName].after;
+
+  /* RESET SLIDER POSITION */
+  line.style.left = "50%";
+
+  knob.style.left = "50%";
+
+  before.style.width = "50%";
+
+  after.style.left = "50%";
+
+  after.style.width = "50%";
+}
+// ═══════════════ SCROLL TO TREATMENTS ═══════════════
+function scrollToTreatments() {
+  var el = document.getElementById("treatments-anchor");
+  if (el) el.scrollIntoView({ behavior: "smooth" });
+}
+
+// ═══════════════ GALLERY FILTER ═══════════════
+function filterG(btn, cat) {
+  document.querySelectorAll(".gf-btn").forEach(function (b) {
+    b.classList.remove("active");
+  });
+  btn.classList.add("active");
+  document.querySelectorAll(".gp-item").forEach(function (el) {
+    el.style.display =
+      cat === "all" || el.dataset.cat === cat ? "flex" : "none";
+  });
+}
+
+// ═══════════════ FAQ ═══════════════
+// document.addEventListener("click", function (e) {
+//   console.log("ummama 232 =>",e.target);
+//   var q = e.target.closest(".faq-q");
+//   if (!q) return;
+//   var item = q.closest(".faq-item");
+//   var open = item.classList.contains("open");
+//   document.querySelectorAll(".faq-item").forEach(function (i) {
+//     i.classList.remove("open");
+//   });
+//   if (!open) item.classList.add("open");
+// });
+
+function showTreatment(key) {
+  console.log("umama");
+  var t = T[key];
+  if (!t) {
+    showPage("home");
+    return;
+  }
+  document.getElementById("t-bc").textContent = t.bc;
+  document.getElementById("t-hero-title").innerHTML = t.title;
+  document.getElementById("t-hero-sub").textContent = t.sub;
+  document.getElementById("t-tag").textContent = t.tag;
+  document.getElementById("t-h2").innerHTML = t.h2;
+  document.getElementById("t-p1").textContent = t.p1;
+  document.getElementById("t-p2").textContent = t.p2;
+  document.getElementById("t-price").textContent = t.price;
+  var bl = document.getElementById("t-benefits");
+  bl.innerHTML = "";
+  t.benefits.forEach(function (b) {
+    var li = document.createElement("li");
+    li.textContent = b;
+    bl.appendChild(li);
+  });
+  var fl = document.getElementById("t-faqs");
+  fl.innerHTML = "";
+  t.faqs.forEach(function (f) {
+    fl.innerHTML +=
+      '<div class="faq-item"><div class="faq-q">' +
+      f.q +
+      '<span class="faq-icon">+</span></div><div class="faq-a">' +
+      f.a +
+      "</div></div>";
+  });
+  showPage("treatment");
+}
+// function showTreatment(key) {
+//   console.log("Clicked Treatment:", key);
+
+//   // Check if T object exists
+//   if (typeof T === "undefined") {
+//     console.error("T object not found");
+//     return;
+//   }
+
+//   // Check if treatment exists
+//   if (!T[key]) {
+//     console.error("Treatment not found:", key);
+//     showPage("home");
+//     return;
+//   }
+
+//   // Get treatment data
+//   const t = T[key];
+
+//   // Hero Content
+//   document.getElementById("t-bc").textContent = t.bc;
+//   document.getElementById("t-hero-title").innerHTML = t.title;
+//   document.getElementById("t-hero-sub").textContent = t.sub;
+//   document.getElementById("t-tag").textContent = t.tag;
+//   document.getElementById("t-h2").innerHTML = t.h2;
+//   document.getElementById("t-p1").textContent = t.p1;
+//   document.getElementById("t-p2").textContent = t.p2;
+//   document.getElementById("t-price").textContent = t.price;
+
+//   // Benefits
+//   const bl = document.getElementById("t-benefits");
+//   bl.innerHTML = "";
+
+//   t.benefits.forEach(function (b) {
+//     const li = document.createElement("li");
+//     li.textContent = b;
+
+//     bl.appendChild(li);
+//   });
+
+//   // FAQs
+//   const fl = document.getElementById("t-faqs");
+//   fl.innerHTML = "";
+
+//   t.faqs.forEach(function (f) {
+//     fl.innerHTML += `
+//       <div class="faq-item">
+
+//         <div class="faq-q">
+//           ${f.q}
+//           <span class="faq-icon">+</span>
+//         </div>
+
+//         <div class="faq-a">
+//           ${f.a}
+//         </div>
+
+//       </div>
+//     `;
+//   });
+
+//   // Open treatment page
+//   showPage("treatment");
+
+//   // Scroll top
+//   window.scrollTo({
+//     top: 0,
+//     behavior: "smooth",
+//   });
+// }
+// ═══════════════ BLOG ARTICLES ═══════════════
+
+var articles = {
+  "botox-science": {
+    bc: "Botox Science",
+    title: "The Science Behind Botox",
+    meta: "By Dr. Shivangi · May 2025 · 5 min read",
+    cat: "Anti-Aging",
+    body: '<h2>What Is Botox, Really?</h2><p>Botox — short for botulinum toxin type A — is a highly purified neurotoxic protein produced by Clostridium botulinum. While the word "toxin" might sound alarming, in the microscopic doses used in aesthetic medicine, it is extraordinarily safe and has been used clinically for over 30 years.</p><h2>How Does It Work?</h2><p>When injected into a muscle, Botox blocks the release of acetylcholine — the neurotransmitter that signals muscles to contract. Without this signal, the targeted muscle relaxes, causing the overlying skin to smooth out.</p><p>The key is precision. Dr. Shivangi targets only the muscles responsible for expression lines — forehead lines, frown lines (glabella), and crow\'s feet — while leaving surrounding muscles completely unaffected.</p><h2>The Artistry of Micro-Dosing</h2><p>The difference between natural-looking Botox and the "frozen face" look lies entirely in technique and dosing. Dr. Shivangi uses micro-dosing — injecting smaller amounts at multiple precise points — which preserves natural movement while softening lines.</p><h3>What to Expect After Treatment</h3><ul><li>Results begin appearing within 3–5 days</li><li>Full effect visible at 10–14 days</li><li>Results last 4–6 months on average</li><li>Minimal to no downtime</li></ul><h2>Is Botox Safe?</h2><p>When administered by a qualified medical professional using FDA-approved products, Botox has an excellent safety record. Dr. Shivangi uses only pharmaceutical-grade Botox and follows strict injection protocols.</p><p>The most common side effects are mild redness or slight bruising at the injection site, which typically resolve within a few hours to a day.</p>',
+  },
+  "prp-vs-minoxidil": {
+    bc: "PRP vs Minoxidil",
+    title: "PRP vs. Minoxidil for Hair Loss",
+    meta: "By Dr. Shivangi · April 2025 · 6 min read",
+    cat: "Hair Care",
+    body: "<h2>The Hair Loss Dilemma</h2><p>When hair starts to thin, the first question most people ask is: what actually works? Today, two treatments dominate the conversation — PRP therapy and Minoxidil. Both have clinical evidence behind them, but they work in fundamentally different ways.</p><h2>What is Minoxidil?</h2><p>Minoxidil is a topical (and now oral) medication originally developed as a blood pressure drug. It was noticed to cause hair growth as a side effect, and has since become one of the most widely used hair loss treatments globally.</p><p>It works by extending the hair growth phase (anagen) and increasing blood flow to follicles. It must be applied daily and indefinitely — stopping treatment typically reverses gains within months.</p><h2>What is PRP Therapy?</h2><p>Platelet-Rich Plasma therapy uses your own blood's growth factors to directly stimulate hair follicles. Blood is drawn, centrifuged to concentrate the platelets, and injected into the scalp at follicular level.</p><p>PRP contains multiple growth factors including VEGF, PDGF, and IGF-1 that directly activate dormant follicles and extend the growth cycle.</p><h3>The Comparison</h3><ul><li><strong>Minoxidil:</strong> Daily application, lifelong commitment, modest results, good for maintenance</li><li><strong>PRP:</strong> In-clinic sessions every 4–6 weeks initially, uses your own biology, stronger density improvement, more durable results with maintenance</li></ul><h2>Dr. Shivangi's Recommendation</h2><p>For most patients, a combination approach delivers the best results: PRP for follicle activation and density improvement, with topical treatments for maintenance. The right protocol depends entirely on your type and stage of hair loss, which is why a consultation is essential.</p>",
+  },
+  "spf-guide": {
+    bc: "SPF Guide",
+    title: "SPF 50 vs SPF 30: The Truth",
+    meta: "By Dr. Shivangi · April 2025 · 4 min read",
+    cat: "Skincare",
+    body: "<h2>The SPF Confusion</h2><p>Walk into any pharmacy and you'll find sunscreens ranging from SPF 15 to SPF 100+. The marketing suggests that higher is always better. But what does the science actually say?</p><h2>What Does SPF Actually Mean?</h2><p>SPF stands for Sun Protection Factor. SPF 30 blocks approximately 97% of UVB rays. SPF 50 blocks approximately 98%. SPF 100 blocks approximately 99%. The difference between SPF 30 and SPF 50 is just 1% — but that 1% matters, especially if you have pigmentation-prone skin.</p><h2>What Dr. Shivangi Actually Uses</h2><p>As an aesthetic physician who performs skin resurfacing and pigmentation treatments, daily SPF 50 PA+++ is non-negotiable in Dr. Shivangi's routine. The PA+++ rating indicates high UVA protection — which is responsible for pigmentation, premature ageing, and DNA damage.</p><h3>Key Recommendations</h3><ul><li>Use SPF 50 PA+++ daily, even indoors (UV penetrates glass)</li><li>Reapply every 2 hours when outdoors</li><li>Apply 2 finger lengths of sunscreen for face and neck</li><li>Use broad-spectrum formulas that cover both UVA and UVB</li><li>For Indian skin, mineral sunscreens (zinc oxide, titanium dioxide) are less likely to cause breakouts</li></ul><h2>The Bottom Line</h2><p>For everyday use, SPF 50 PA+++ broad-spectrum is the gold standard recommended by Dr. Shivangi. It's the single most effective anti-aging and anti-pigmentation product you can use — and it costs under ₹500.</p>",
+  },
+  "natural-fillers": {
+    bc: "Natural Fillers",
+    title: "The Art of Natural Fillers",
+    meta: "By Dr. Shivangi · March 2025 · 5 min read",
+    cat: "Aesthetic",
+    body: '<h2>The Era of "Too Much" Is Over</h2><p>For a decade, overfilled lips, pillow cheeks, and stretched faces dominated aesthetic medicine. Today\'s patients — and today\'s best practitioners — have moved firmly in the opposite direction.</p><h2>What Makes Fillers Look Unnatural?</h2><p>Overfilling is the most common culprit. When too much product is placed in one area, it distorts natural facial proportions. The face has ideal volumetric ratios — when these are disrupted, it looks "done."</p><p>The second factor is placement. Fillers placed in the wrong plane (too superficial, or in the wrong anatomical layer) create lumps, distortion, or an unnatural heaviness.</p><h2>The Modern Philosophy: Addition by Subtraction</h2><p>Dr. Shivangi\'s approach to fillers is guided by a simple principle: what is the minimum intervention that delivers the maximum natural improvement? Sometimes a single 0.5ml of product placed precisely delivers more impact than 2ml placed carelessly.</p><h3>The Technical Principles</h3><ul><li>Always assess the face as a whole, not individual features</li><li>Restore what was lost — don\'t add what was never there</li><li>Work with natural anatomy, never against it</li><li>Less product, more sessions — allows for gradual, refined results</li><li>Respect the "danger zones" — areas requiring ultra-precise technique</li></ul><h2>The Result Nobody Can Quite Identify</h2><p>The highest compliment a filler patient can receive is: "You look amazing — have you been on holiday?" Not: "Have you had something done?" That is the art of natural aesthetics — visible improvement, invisible intervention.</p>',
+  },
+  "indian-skin-pigmentation": {
+    bc: "Indian Skin",
+    title: "Pigmentation in Indian Skin",
+    meta: "By Dr. Shivangi · February 2025 · 5 min read",
+    cat: "Pigmentation",
+    body: "<h2>Why Indian Skin is Different</h2><p>Indian and South Asian skin (Fitzpatrick Types III–V) has a higher melanin content than lighter skin types. Melanin is the pigment that gives skin its colour — and it's the same pigment responsible for dark spots, melasma, and post-inflammatory hyperpigmentation (PIH).</p><h2>The Risk of Generic Protocols</h2><p>Treatments designed for Caucasian skin — particularly aggressive chemical peels and certain laser wavelengths — can cause severe post-inflammatory hyperpigmentation in darker skin tones. This is why it's critical to see a physician who has specific expertise in treating melanin-rich skin.</p><h2>What Causes Pigmentation in Indian Skin?</h2><ul><li><strong>Melasma:</strong> Hormonally triggered, worsened by UV and heat. Extremely common in Indian women.</li><li><strong>Post-Inflammatory Hyperpigmentation (PIH):</strong> Dark marks left behind by acne, rashes, or injury.</li><li><strong>Sun Damage:</strong> UV exposure triggers excess melanin production.</li><li><strong>Periorbital Hyperpigmentation:</strong> Dark circles under the eyes — genetic, lifestyle, or vascular.</li></ul><h2>The Right Treatment Approach</h2><p>Dr. Shivangi uses a carefully calibrated combination of low-strength chemical peels (mandelic, kojic, lactic acid), Q-switched Nd:YAG laser (the gold standard for Indian skin), and prescribed brightening skincare to safely and progressively clear pigmentation.</p><p>The key word is progressive. Rushing pigmentation treatment in dark skin almost always causes rebound. Slow, consistent, medically guided treatment delivers lasting results without risk.</p>",
+  },
+  "hydrafacial-vs-facial": {
+    bc: "HydraFacial vs Facial",
+    title: "HydraFacial vs Traditional Facial",
+    meta: "By Dr. Shivangi · February 2025 · 4 min read",
+    cat: "Skin Care",
+    body: "<h2>The Classic Spa Facial</h2><p>A traditional facial typically involves cleansing, steam, manual extraction, a mask, and moisturiser. Done well, it leaves skin feeling refreshed. But the results are largely superficial and temporary — typically lasting a few days to a week.</p><h2>What Makes HydraFacial Different?</h2><p>HydraFacial is a medical-grade treatment that uses patented Vortex-Fusion technology to simultaneously cleanse, exfoliate, extract, and infuse the skin with targeted serums. The process is controlled, measurable, and reproducible.</p><h3>The Four Step Difference</h3><ul><li><strong>Step 1 — Cleanse & Peel:</strong> Gentle resurfacing removes dead skin cells</li><li><strong>Step 2 — Extract & Hydrate:</strong> Painless suction removes blackheads and congestion while delivering hyaluronic acid</li><li><strong>Step 3 — Fuse & Protect:</strong> Antioxidants, peptides, and growth factors are infused</li><li><strong>Step 4 — Targeted Boosters:</strong> Customised serums for your specific skin concern</li></ul><h2>Is the Price Worth It?</h2><p>A HydraFacial costs 3–5x more than a standard facial. The results, however, are measurably different: immediate pore reduction, improved hydration levels, and visible glow that lasts 4–6 weeks rather than 4–6 days.</p><p>For patients with specific skin concerns — congestion, pigmentation, fine lines, or dehydration — a course of HydraFacials delivers clinical-level improvement without any downtime. For most patients, Dr. Shivangi's answer is: yes, the price difference is absolutely worth it.</p>",
+  },
+};
+
+function showBlogArticle(key) {
+  var a = articles[key];
+  if (!a) return;
+  document.getElementById("art-bc").textContent = a.bc;
+  document.getElementById("art-title").textContent = a.title;
+  document.getElementById("art-meta").textContent = a.meta;
+  document.getElementById("art-cat").textContent = a.cat;
+  document.getElementById("art-body").innerHTML = a.body;
+  showPage("blog-article");
+}
 
 /* =========================
    AUTO SLIDER
@@ -358,9 +563,8 @@ const slides = document.querySelectorAll(".ba-slide");
 let current = 0;
 
 /* SHOW SLIDE */
-function showSlide(index){
-
-  slides.forEach(slide=>{
+function showSlide(index) {
+  slides.forEach((slide) => {
     slide.classList.remove("active");
   });
 
@@ -368,18 +572,15 @@ function showSlide(index){
 }
 
 /* AUTO CHANGE */
-setInterval(()=>{
-
+setInterval(() => {
   current++;
 
-  if(current >= slides.length){
+  if (current >= slides.length) {
     current = 0;
   }
 
   showSlide(current);
-
-},2000);
-
+}, 2000);
 
 /* =========================
    TOUCH / SWIPE
@@ -390,22 +591,18 @@ const slider = document.getElementById("baCarousel");
 let startX = 0;
 let endX = 0;
 
-slider.addEventListener("touchstart",(e)=>{
-
+slider.addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
-
 });
 
-slider.addEventListener("touchend",(e)=>{
-
+slider.addEventListener("touchend", (e) => {
   endX = e.changedTouches[0].clientX;
 
   /* LEFT SWIPE */
-  if(startX - endX > 50){
-
+  if (startX - endX > 50) {
     current++;
 
-    if(current >= slides.length){
+    if (current >= slides.length) {
       current = 0;
     }
 
@@ -413,33 +610,29 @@ slider.addEventListener("touchend",(e)=>{
   }
 
   /* RIGHT SWIPE */
-  if(endX - startX > 50){
-
+  if (endX - startX > 50) {
     current--;
 
-    if(current < 0){
+    if (current < 0) {
       current = slides.length - 1;
     }
 
     showSlide(current);
   }
-
 });
 
 /* =========================
    AUTO CAROUSEL FIX
 ========================= */
 
-document.addEventListener("DOMContentLoaded", function(){
-
+document.addEventListener("DOMContentLoaded", function () {
   const slides = document.querySelectorAll(".ba-slide");
 
   let current = 0;
 
   /* SHOW SLIDE */
-  function showSlide(index){
-
-    slides.forEach((slide)=>{
+  function showSlide(index) {
+    slides.forEach((slide) => {
       slide.classList.remove("active");
     });
 
@@ -447,18 +640,15 @@ document.addEventListener("DOMContentLoaded", function(){
   }
 
   /* AUTO SLIDER */
-  setInterval(()=>{
-
+  setInterval(() => {
     current++;
 
-    if(current >= slides.length){
+    if (current >= slides.length) {
       current = 0;
     }
 
     showSlide(current);
-
-  },2000);
-
+  }, 2000);
 
   /* =========================
      MOBILE SWIPE
@@ -469,22 +659,18 @@ document.addEventListener("DOMContentLoaded", function(){
   let startX = 0;
   let endX = 0;
 
-  slider.addEventListener("touchstart",(e)=>{
-
+  slider.addEventListener("touchstart", (e) => {
     startX = e.touches[0].clientX;
-
   });
 
-  slider.addEventListener("touchend",(e)=>{
-
+  slider.addEventListener("touchend", (e) => {
     endX = e.changedTouches[0].clientX;
 
     /* LEFT SWIPE */
-    if(startX - endX > 50){
-
+    if (startX - endX > 50) {
       current++;
 
-      if(current >= slides.length){
+      if (current >= slides.length) {
         current = 0;
       }
 
@@ -492,37 +678,30 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
     /* RIGHT SWIPE */
-    if(endX - startX > 50){
-
+    if (endX - startX > 50) {
       current--;
 
-      if(current < 0){
+      if (current < 0) {
         current = slides.length - 1;
       }
 
       showSlide(current);
     }
-
   });
-
 });
-
-    
 
 /* =========================
    AUTO IMAGE SLIDER
 ========================= */
 
-window.addEventListener("load", function(){
-
+window.addEventListener("load", function () {
   const slides = document.querySelectorAll(".beauty-slide");
 
   let current = 0;
 
   /* SHOW */
-  function showSlide(index){
-
-    slides.forEach((slide)=>{
+  function showSlide(index) {
+    slides.forEach((slide) => {
       slide.classList.remove("active");
     });
 
@@ -530,18 +709,15 @@ window.addEventListener("load", function(){
   }
 
   /* AUTO PLAY */
-  setInterval(function(){
-
+  setInterval(function () {
     current++;
 
-    if(current >= slides.length){
+    if (current >= slides.length) {
       current = 0;
     }
 
     showSlide(current);
-
-  },2000);
-
+  }, 2000);
 
   /* =========================
      TOUCH SWIPE
@@ -552,22 +728,18 @@ window.addEventListener("load", function(){
   let startX = 0;
   let endX = 0;
 
-  slider.addEventListener("touchstart", function(e){
-
+  slider.addEventListener("touchstart", function (e) {
     startX = e.touches[0].clientX;
-
   });
 
-  slider.addEventListener("touchend", function(e){
-
+  slider.addEventListener("touchend", function (e) {
     endX = e.changedTouches[0].clientX;
 
     /* NEXT */
-    if(startX - endX > 50){
-
+    if (startX - endX > 50) {
       current++;
 
-      if(current >= slides.length){
+      if (current >= slides.length) {
         current = 0;
       }
 
@@ -575,17 +747,14 @@ window.addEventListener("load", function(){
     }
 
     /* PREV */
-    if(endX - startX > 50){
-
+    if (endX - startX > 50) {
       current--;
 
-      if(current < 0){
+      if (current < 0) {
         current = slides.length - 1;
       }
 
       showSlide(current);
     }
-
   });
-
 });
