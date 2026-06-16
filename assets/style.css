@@ -1864,7 +1864,8 @@
 
     .footer-legal {
       display: flex;
-      gap: 20px
+      gap: 20px;
+      color: rgb(255, 255, 255);
     }
 
     .footer-legal a {
